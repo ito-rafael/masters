@@ -71,3 +71,12 @@ https://www.youtube.com/watch?v=s0MdOnurVIA
 Videoaula 7 - Desenvolvimento Full Stack
 https://www.youtube.com/watch?v=NGaU7d4nZDs
 
+--------------------------------------------------
+
+Orientação de Estudo - Atividades Práticas - Semana 3
+
+Linux:
+https://gitlab.com/univesp-com320/guias-praticos-semana3/-/tree/main/guia-linux-angular-crud-app
+
+Windows:
+https://gitlab.com/univesp-com320/guias-praticos-semana3/-/tree/main/guia-windows-angular-crud-app
