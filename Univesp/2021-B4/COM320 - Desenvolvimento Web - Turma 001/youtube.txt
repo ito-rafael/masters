@@ -55,3 +55,19 @@ https://ava.univesp.br/bbcswebdav/pid-689301-dt-content-rid-4709285_1/xid-470928
 Vídeo de Apoio - Instalação e Configuração do Ambiente de Desenvolvimento Web - Parte 
 https://www.youtube.com/watch?v=kwgN-g7lo3Y
 
+==================================================
+
+Semana 3:
+
+Revisitando Conhecimentos - Fundamentos de Internet e Web - Desenvolvimento de páginas Web com HTML5 e CSS - Parte 1
+https://www.youtube.com/watch?v=IAkJmOCr3VM
+
+Videoaula 5 - Tecnologias para Frontend
+https://www.youtube.com/watch?v=xc1tT64d-Dg
+
+Videoaula 6 - Tecnologias para Backend
+https://www.youtube.com/watch?v=s0MdOnurVIA
+
+Videoaula 7 - Desenvolvimento Full Stack
+https://www.youtube.com/watch?v=NGaU7d4nZDs
+
