@@ -28,3 +28,16 @@ https://www.youtube.com/watch?v=pMT4E01gVLY
 Vídeo de apoio - Estruturação da Aplicação Web – Componentes, Frontend e Backend
 https://youtu.be/NGNQ0sHWhNM  
 
+==================================================
+
+Semana 2:
+
+Videoaula 3 - Componentes de uma Aplicação Web 
+https://www.youtube.com/watch?v=JiwdZQ8XpaA
+
+Videoaula 4 - Estrutura de uma Aplicação Web
+https://www.youtube.com/watch?v=NwfUKE5eSBo
+
+Video de Apoio - Arquitetura de sistemas #01: Conceitos de arquitetura em aplicações para Internet | Digital Innovation One
+https://www.youtube.com/watch?v=OPPM0bcBxgk
+
