@@ -80,3 +80,19 @@ https://gitlab.com/univesp-com320/guias-praticos-semana3/-/tree/main/guia-linux-
 
 Windows:
 https://gitlab.com/univesp-com320/guias-praticos-semana3/-/tree/main/guia-windows-angular-crud-app
+
+==================================================
+
+Semana 4:
+
+Videoaula 8 - Bancos de Dados e Desenvolvimento Web
+https://www.youtube.com/watch?v=mRqe3ShlQtA
+
+Videoaula 9 - Ferramentas para Manipulação de Bancos de Dados para Web
+https://www.youtube.com/watch?v=Tc5k0mY2J-8
+
+--------------------------------------------------
+
+Semana 4 -  Guias Praticos - Desenvolvimento Web - COM320
+https://alunounivespbr.sharepoint.com/sites/MaquinaVirtual/Documentos%20Partilhados/Forms/AllItems.aspx?id=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320%2FSemana%204%20%2D%20%20Guias%20Praticos%20%2D%20Desenvolvimento%20Web%20%2D%20COM320%2Epdf&parent=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320
+
