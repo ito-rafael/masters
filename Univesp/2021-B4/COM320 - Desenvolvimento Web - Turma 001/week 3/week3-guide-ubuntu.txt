@@ -1,0 +1,837 @@
+Guia Atividade Prática - Semana 3
+
+cd /var/www/html
+ng new angular-crud-app
+  --> Yes
+  --> SCSS
+cd /var/www/html/angular-crud-app
+vim ./src/app/app.component.html
+-----
+DELETE EVERYTHING
+-----
+ng generate module components/painel
+ng generate component components/painel
+ng generate module components/pais
+ng generate component components/pais
+ng generate module components/universidades
+ng generate component components/universidades
+
+vim /var/www/html/angular-crud-app/src/app/components/pais/pais-routing.module.ts 
+-----
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PaisComponent } from './pais.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: PaisComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/universidades/universidades-routing.module.ts 
+-----
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { UniversidadesComponent } from './universidades.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: UniversidadesComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class UniversidadesRoutingModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/app-routing.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PainelComponent } from './components/painel/painel.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: PainelComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'pais',
+    loadChildren: () => import('src/app/components/pais/pais.module').then(m => m.PaisModule)
+  },
+  {
+    path: 'universidade',
+    loadChildren: () => import('src/app/components/universidades/universidades.module').then(m => m.UniversidadesModule)
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/app.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+-----
+
+
+cd /var/www/html/angular-crud-app/
+ng generate service services/pais
+vim /var/www/html/angular-crud-app/src/app/services/pais.service.ts
+-----
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PaisService {
+
+  constructor(private http: HttpClient) { }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/environments/environment.ts
+-----
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false,
+  url_api: 'http://localhost:8000/api/'
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+-----
+
+vim /var/www/html/angular-crud-app/src/app/services/pais.service.ts
+-----
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PaisService {
+
+  constructor(private http: HttpClient) { }
+
+  public listar() {
+    return this.http.get(environment.url_api + 'paises');
+  }
+
+  public criar(pais: any) {
+    return this.http.post(environment.url_api + 'paises', pais);
+  }
+
+  public listarPorId(id: number) {
+    return this.http.get(environment.url_api + 'paises/' + id);
+  }
+
+  public atualizar(pais: any, id: number) {
+    return this.http.put(environment.url_api + 'paises/' + id, pais);
+  }
+
+  public excluir(id: number) {
+    return this.http.delete(environment.url_api + 'paises/' + id);
+  }
+}
+-----
+
+ng generate service services/universidade
+vim /var/www/html/angular-crud-app/src/app/services/universidade.service.ts
+-----
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UniversidadeService {
+
+  constructor(private http: HttpClient) { }
+
+  public listar() {
+    return this.http.get(environment.url_api + 'universidades');
+  }
+
+  public criar(pais: any) {
+    return this.http.post(environment.url_api + 'universidades', pais);
+  }
+
+  public listarPorId(id: number) {
+    return this.http.get(environment.url_api + 'universidades/' + id);
+  }
+
+  public atualizar(pais: any, id: number) {
+    return this.http.put(environment.url_api + 'universidades/' + id, pais);
+  }
+
+  public excluir(id: number) {
+    return this.http.delete(environment.url_api + 'universidades/' + id);
+  }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/painel/painel.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PainelComponent } from './painel.component';
+import { PaisService } from 'src/app/services/pais.service';
+import { UniversidadeService } from 'src/app/services/universidade.service';
+
+@NgModule({
+  declarations: [
+    PainelComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  providers: [
+    PaisService,
+    UniversidadeService
+  ]
+})
+export class PainelModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/pais/pais.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PaisComponent } from './pais.component';
+import { PaisRoutingModule } from './pais-routing.module';
+import { PaisService } from 'src/app/services/pais.service';
+
+@NgModule({
+  declarations: [
+    PaisComponent
+  ],
+  imports: [
+    CommonModule,
+    PaisRoutingModule,
+  ],
+  providers: [
+    PaisService
+  ]
+})
+export class PaisModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/universidades/universidades.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UniversidadesComponent } from './universidades.component';
+import { UniversidadesRoutingModule } from './universidades-routing.module';
+import { UniversidadeService } from 'src/app/services/pais.service';
+import { UniversidadeService } from 'src/app/services/universidade.service';
+
+@NgModule({
+  declarations: [
+    UniversidadesComponent
+  ],
+  imports: [
+    CommonModule,
+    UniversidadesRoutingModule,
+  ],
+  providers: [
+    PaisService,
+    UniversidadeService
+  ]
+})
+export class UniversidadesModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/painel/painel.component.ts
+-----
+import { Component, OnInit } from '@angular/core';
+import { PaisService } from 'src/app/services/pais.service';
+import { UniversidadeService } from 'src/app/services/universidades.service';
+
+@Component({
+  selector: 'app-painel',
+  templateUrl: './painel.component.html',
+  styleUrls: ['./painel.component.scss']
+})
+export class PainelComponent implements OnInit {
+
+  public nuPaises: number = 0;
+  public nuUniversidades: number = 0;
+
+  constructor(
+    private _paisService: PaisService,
+    private _universidadeService: UniversidadeService
+  ) { }
+
+  ngOnInit(): void {
+    this._paisService.listar().subscribe(resp => {
+      this.nuPaises = Object.values(resp).length;
+    }, err => {
+      console.error('Ocurreu um erro');
+    });
+
+    this._universidadeService.listar().subscribe(resp => {
+      this.nuUniversidades = Object.values(resp).length;
+    }, err => {
+      console.error('Ocurreu um erro');
+    });
+  }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/pais/pais.component.ts
+-----
+import { Component, OnInit } from '@angular/core';
+import { PaisService } from 'src/app/services/pais.service';
+
+@Component({
+  selector: 'app-pais',
+  templateUrl: './pais.component.html',
+  styleUrls: ['./pais.component.scss']
+})
+export class PaisComponent implements OnInit {
+
+  public paises: any = [];
+  public pais: any = this._iniciarPais();
+
+  constructor(
+    private _paisService: PaisService
+  ) { }
+
+  ngOnInit(): void {
+    this.listar();
+  }
+
+  public listar(): void {
+    this._paisService.listar().subscribe(resp => {
+      this.paises = resp;
+    });
+  }
+
+  public salvar(): void {
+    if (this.pais.nome !== "") {
+      this._paisService.criar(this.pais).subscribe(resp => {
+        alert('Cadastrado!');
+        this.listar();
+        this.pais = this._iniciarPais();
+      });
+    }
+  }
+
+  public editar(pais: any): void {
+    this.pais = Object.assign({}, pais);
+  }
+
+  public atualizar() {
+    if (this.pais.nome !== "") {
+      this._paisService.atualizar(this.pais, this.pais.id).subscribe(resp => {
+        alert('Ataulizado!');
+        this.listar();
+        this.pais = this._iniciarPais();
+      });
+    }
+  }
+
+  public cancelar(): void {
+    this.pais = this._iniciarPais();
+  }
+
+  public excluir(id: number): void {
+    this._paisService.excluir(id).subscribe(resp => {
+      alert('Excluído!');
+      this.listar();
+    });
+  }
+
+  private _iniciarPais() {
+    return {
+      id: null,
+      nome: ''
+    };
+  }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/universidades/universidades.component.ts
+-----
+import { Component, OnInit } from '@angular/core';
+import { PaisService } from 'src/app/services/pais.service';
+import { UniversidadeService } from 'src/app/services/universidades.service';
+
+@Component({
+  selector: 'app-universidades',
+  templateUrl: './universidades.component.html',
+  styleUrls: ['./universidades.component.scss']
+})
+export class UniversidadesComponent implements OnInit {
+
+  public paises: any = [];
+  public universidades: any = [];
+  public universidadeForm: any = this._iniciarUniversidade();
+
+  constructor(
+    private _paisService: PaisService,
+    private _universidadeService: UniversidadeService
+  ) { }
+
+  ngOnInit(): void {
+    this.buscarPaises();
+    this.listar();
+  }
+
+  public buscarPaises(): void {
+    this._paisService.listar().subscribe(resp => {
+      this.paises = resp;
+    });
+  }
+
+  public listar(): void {
+    this._universidadeService.listar().subscribe(resp => {
+      this.universidades = resp;
+    })
+  }
+
+  public criar(): void {
+    if (
+      this.universidadeForm.nome !== "" &&
+      this.universidadeForm.descricao !== "" &&
+      this.universidadeForm.pais_id !== "" &&
+      this.universidadeForm.dt_fundacao !== ""
+    ) {
+      this._universidadeService.criar(this.universidadeForm).subscribe(resp => {
+        this.listar();
+        this.universidades = this._iniciarUniversidade();
+        alert('Cadastrado!');
+      });
+    }
+  }
+
+  public editar(universidade: any): void {
+    this.universidadeForm = Object.assign({}, universidade);
+  }
+
+  public atualizar() {
+    if (
+      this.universidadeForm.nome !== "" &&
+      this.universidadeForm.descricao !== "" &&
+      this.universidadeForm.pais_id !== "" &&
+      this.universidadeForm.dt_fundacao !== ""
+    ) {
+      this._universidadeService.atualizar(this.universidadeForm, this.universidadeForm.id).subscribe(resp => {
+        alert('Ataulizado!');
+        this.universidades = this._iniciarUniversidade();
+        this.listar();
+      });
+    }
+  }
+
+  public cancelar(): void {
+    this.universidadeForm = this._iniciarUniversidade();
+  }
+
+  public excluir(id: number): void {
+    this._universidadeService.excluir(id).subscribe(resp => {
+      alert('Excluído!');
+      this.listar();
+    });
+  }
+
+  private _iniciarUniversidade() {
+    return {
+      id: null,
+      nome: '',
+      descricao: '',
+      dt_fundacao: '',
+      pais_id: ''
+    }
+  }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/app.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/pais/pais.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PaisComponent } from './pais.component';
+import { PaisRoutingModule } from './pais-routing.module';
+import { PaisService } from 'src/app/services/pais.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    PaisComponent
+  ],
+  imports: [
+    CommonModule,
+    PaisRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    PaisService
+  ]
+})
+export class PaisModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/universidades/universidades.module.ts
+-----
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UniversidadesComponent } from './universidades.component';
+import { UniversidadesRoutingModule } from './universidades-routing.module';
+import { PaisService } from 'src/app/services/pais.service';
+import { UniversidadeService } from 'src/app/services/universidade.service';
+
+@NgModule({
+  declarations: [
+    UniversidadesComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UniversidadesRoutingModule,
+  ],
+  providers: [
+    PaisService,
+    UniversidadeService
+  ]
+})
+export class UniversidadesModule { }
+-----
+
+vim /var/www/html/angular-crud-app/src/styles.scss
+-----
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  background-color: cadetblue;
+  border: 1px solid #c9c9c9;
+  min-height: 20px;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.txt-vermelho {
+  color: red;
+}
+
+.m-lados {
+  margin: 0px 5px;
+}
+
+.m-topo {
+  margin-top: 20px;
+}
+
+.m-bottom {
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/painel/painel.component.html
+-----
+<div class="flex" style="margin-top: 60px;">
+  <div class="box box-azul">
+    <p>Total Países</p><br>
+    <span>{{nuPaises}}</span>
+  </div>
+
+  <div class="box box-verde">
+    <p>Total Universidades</p><br>
+    <span>{{nuUniversidades}}</span>
+  </div>
+</div>
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/painel/painel.component.scss
+-----
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  display: block;
+  width: 280px;
+  height: 160px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0px 10px;
+
+  &.box-azul {
+    background-color: #00008b;
+    color: white;
+  }
+
+  &.box-verde {
+    background-color: #008000;
+    color: white;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  span {
+    font-size: 2rem;
+  }
+}
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/pais/pais.component.html
+-----
+<h4>Cadastrar País</h4>
+<form action="" class="m-bottom">
+  <div>
+    <label for="nome">Nome <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="text" name="nome" [(ngModel)]="pais.nome">
+  </div>
+
+  <button *ngIf="!pais.id" type="submit" class="btn m-topo" (click)="salvar()">
+    Salvar
+  </button>
+
+  <button *ngIf="pais.id" type="submit" class="btn m-topo" (click)="atualizar()">
+    Salvar
+  </button>
+  <button *ngIf="pais.id" type="submit" class="btn m-topo" (click)="cancelar()">
+    Cancelar
+  </button>
+</form>
+
+<hr>
+
+<h4>Lista de Países</h4>
+<table class="table m-topo m-bottom">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="paises.length > 0">
+    <tr *ngFor="let pais of paises;">
+      <td>{{ pais.id }}</td>
+      <td>{{ pais.nome }}</td>
+      <td>
+        <button (click)="editar(pais)">Editar</button>
+        <button (click)="excluir(pais.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="paises.length == 0">
+    <tr>
+      <td class="text-center" colspan="3">
+        Nenhum resultado encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+-----
+
+vim /var/www/html/angular-crud-app/src/app/components/universidades/universidades.component.html
+-----
+<h4>Cadastrar Universidade</h4>
+<form action="" class="m-bottom">
+  <div class="m-topo m-bottom">
+    <label for="nome">Nome <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="text" name="nome" [(ngModel)]="universidadeForm.nome">
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="dtFundacao">Data da Fundação <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="date" name="dtFundacao" [(ngModel)]="universidadeForm.dt_fundacao">
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="pais">País <span class="txt-vermelho">*</span>:</label> <br>
+    <select name="pais" [(ngModel)]="universidadeForm.pais_id" [disabled]="universidadeForm.id">
+      <option value="">Selecione...</option>
+      <option *ngFor="let pais of paises" value="{{ pais.id }}">{{ pais.nome }}</option>
+    </select>
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="descricao">Descrição <span class="txt-vermelho">*</span>:</label> <br>
+    <textarea name="descricao" cols="30" rows="10" [(ngModel)]="universidadeForm.descricao"></textarea>
+  </div>
+
+  <button *ngIf="!universidadeForm.id" type="submit" class="btn" (click)="criar()">
+    Salvar
+  </button>
+
+  <button *ngIf="universidadeForm.id" type="submit" class="btn" (click)="atualizar()">
+    Salvar
+  </button>
+  <button *ngIf="universidadeForm.id" type="submit" class="btn" (click)="cancelar()">
+    Cancelar
+  </button>
+</form>
+
+<hr>
+
+<h4>Lista de Universidades</h4>
+<table class="table m-topo  m-bottom">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Data Fundação</th>
+      <th>Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="universidades.length > 0">
+    <tr *ngFor="let universidade of universidades;">
+      <td>{{ universidade.id }}</td>
+      <td>{{ universidade.nome }}</td>
+      <td>{{ universidade.dt_fundacao }}</td>
+      <td>{{ universidade.descricao }}</td>
+      <td class="text-center">
+        <button (click)="editar(universidade)">Editar</button>
+        <button (click)="excluir(universidade.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="universidades.length == 0">
+    <tr>
+      <td class="text-center" colspan="5">
+        Nenhum resultado encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+-----
+
+vim /var/www/html/angular-crud-app/src/app/app.component.html
+-----
+<h3 class="titulo">CRUD Básico em Angular/Laravel</h3>
+
+<div class="text-center">
+  <button routerLink="" class="btn m-lados" type="button">
+    Painel
+  </button>
+
+  <button routerLink="pais" class="btn m-lados" type="button">
+    Países
+  </button>
+
+  <button routerLink="universidade" class="btn m-lados" type="button">
+    Universidades
+  </button>
+</div>
+
+<router-outlet></router-outlet>
+-----
+
+npm start
