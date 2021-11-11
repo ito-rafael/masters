@@ -1,0 +1,448 @@
+Guia Atividade Prática - Semana 5
+
+# Laravel
+cd /var/www/html
+composer create-project laravel/laravel --prefer-dist laravel-crud-app
+cd laravel-crud-app
+php artisan -V
+
+# MySQL
+vim /var/www/html/laravel-crud-app/.env
+# edit the following lines
+-----
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=User@2021
+-----
+php artisan config:clear
+php artisan make:model Pais --migration
+php artisan make:model Universidade --migration
+
+vim /var/www/html/laravel-crud-app/database/migrations/*create_pais_table.php
+# edit the 'up()' function
+-----
+    public function up()
+    {
+        Schema::create('pais', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+	        $table->string('nome');
+        });
+    }
+-----
+
+vim /var/www/html/laravel-crud-app/database/migrations/*create_universidades_table.php
+-----
+<?php
+
+use App\Models\Pais;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateUniversidadesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('universidades', function (Blueprint $table) {
+            $table->id();
+	    $table->string('nome');
+	    $table->string('descricao', 600);
+	    $table->date('dt_fundacao');
+	    $table->foreignIdFor(Pais::class); // pais_id
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('universidades');
+    }
+}
+-----
+
+cd /var/www/html/laravel-crud-app
+php artisan migrate
+
+vim /var/www/html/laravel-crud-app/app/Models/Pais.php
+-----
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Pais extends Model
+{
+    use HasFactory;
+    protected $fillable = ['nome'];
+}
+-----
+
+vim /var/www/html/laravel-crud-app/app/Models/Universidade.php
+-----
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Universidade extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'nome';
+        'descricao';
+        'dt_fundacao';
+	'pais_id';
+    ];
+
+    protected $hidden = ['pais_id];
+}
+-----
+
+cd /var/www/html/laravel-crud-app
+php artisan make:controller PaisController --resource
+php artisan make:controller UniversidadeController --resource
+
+vim /var/www/html/laravel-crud-app/app/Http/Controllers/PaisController.php
+-----
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Pais;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
+class PaisController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return response()->json(
+	    Pais::all()
+	);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $storeData = Validator::make($request->all(), [
+	    'nome' => 'required|max:255'
+	]);
+
+	if ($storeData->fails()) {
+	    return response()->json($storeData, 422);
+	}
+
+	return response()->json(
+	    Pais::create($request->all()),
+	    201
+	);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return response()->json(
+	    Pais::findOrFail($id)
+	);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $updateData = Validator::make($request->all(), [
+	    'name' => 'required|max:255',
+	    'descricao' => 'required|max:255',
+	    'dt_fundacao' => 'required',
+	]);
+
+	if ($updateData->fails()) {
+	    return response()->json($updateData, 422);
+	}
+
+	$universidade = Universidade::whereId($id)->update($request->all());
+	return response()->json($universidade);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $universidade = Universidade::findOrFail($id);
+	$universidade->delete();
+	return response()->json(null, 204);
+    }
+}
+-----
+
+vim /var/www/html/laravel-crud-app/app/Http/Controllers/UniversidadeController.php
+-----
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UniversidadeController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return response()->json(
+	    Universidade::all()
+	);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $storeData = Validator::make($request->all(), [
+	    'nome' => 'required|max:255',
+	    'descricao' => 'required|max:600',
+	    'dt_fundacao' => 'required',
+	    'pais_id' => 'required'
+ 	]);
+
+	if ($storeData->fails()) {
+	    return response()->json($storeData, 422);
+	}
+
+	return response()->json(
+	    Universidade::create($request->all()),
+	    201
+	);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return response()->json(
+	    Universidade::findOrFail($id)
+	);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $updateData = Validator::make($request->all(), [
+	    'nome' => 'required|max:255',
+	    'descricao' => 'required|max:600',
+	    'dt_fundacao' => 'required',
+	    'pais_id' => 'required'
+ 	]);
+
+	if ($updateData->fails()) {
+	    return response()->json($updateData, 422);
+	}
+
+	$universidade::Universidade::whereId($id)->update($request->all()),
+	return response()->json($universidade);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+	$universidade = Universidade::findOrFail($id);
+	$universidade->delete();
+	return response()->json(null, 204);
+    }
+}
+-----
+
+vim /var/www/html/laravel-crud-app/routes/api.php
+-----
+<?php
+
+use App\Http\Controllers\PaisController;
+use App\Http\Controllers\UniversidadeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('/paises',      [PaisController::class, 'index']);
+Route::get('/paises/{id}', [PaisController::class, 'show']);
+Route::post('/paises',     [PaisController::class, 'store']);
+Route::put('/paises',      [PaisController::class, 'update']);
+Route::delete('/paises',   [PaisController::class, 'destroy']);
+
+Route::get('/universidades',      [UniversidadeController::class, 'index']);
+Route::get('/universidades/{id}', [UniversidadeController::class, 'show']);
+Route::post('/universidades',     [UniversidadeController::class, 'store']);
+Route::put('/universidades',      [UniversidadeController::class, 'update']);
+Route::delete('/universidades',   [UniversidadeController::class, 'destroy']);
+-----
+
+sudo vim /etc/apache2/sites-available/meus-projetos.conf
+-----
+<VirtualHost *:80>
+    ServerName localhost
+    ServerAdmin admin@example.com
+    DocumentRoot /var/www/html/laravel-crud-app/public
+    <Directory /var/www/html/laravel-crud-app>
+        AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+-----
+<VirtualHost _default_:80>
+    DocumentRoot /var/www/html/laravel-crud-app/public
+    ServerName laravel-crud-app.test
+    ServerAlias *.laravel-crud-app.test
+    <Directory /var/www/html/laravel-crud-app>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+-----
+
+cd /etc/apache2/sites-available
+sudo a2ensite meus-projetos.conf
+sudo systemctl restart apache2
+
+# fixing permissions
+cd /var/www/html/laravel-crud-app
+sudo chown -R $USER:www-data storage
+chmod -R 775 storage
+
+# Postman
+cd /home/user/Downloads
+wget https://dl.pstmn.io/download/latest/linux64
+tar -xvzf linux64
+rm linux64
+/home/user/Downloads/Postman/Postman &
+# follow instructions in the PDF
+-----
+http://localhost/api/paises
+http://laravel-crud-app.test/api/paises
+{"nome":"México"}
+
+
+# MySQL debugging
+sudo mysql -u root -p
+use laravel_db;
+show tables;
+describe pais;
+describe universidades;
+quit;
