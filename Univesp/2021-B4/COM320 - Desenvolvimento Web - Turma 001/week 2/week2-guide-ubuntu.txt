@@ -1,0 +1,91 @@
+# update
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get install -y vim-gtk3 gcc make pearl git
+
+# Apache
+sudo apt-get install -y apache2
+sudo systemctl start apache2
+
+# MySQL
+sudo apt-get install -y mysql-server
+sudo mysql_secure_installation
+-----
+password: user
+'yes' to all
+-----
+sudo mysql
+
+# PHP
+sudo apt-get install -y php libapache2-mod-php php-mbstring php-cli php-bcmath php-json php-xml php-zip php-pdo php-common php-tokenizer php-mysql
+vim /srv/http/html/info.php
+-----
+<?php
+ phpinfo();
+-----
+
+# Laravel
+sudo mysql -u root -p
+CREATE DATABASE laravel_db;
+CREATE USER 'laravel_user'@'localhost' IDENTIFIED BY 'User@2021';
+GRANT ALL ON laravel_db.* TO 'laravel_user'@'localhost';
+FLUSH PRIVILEGES;
+QUIT;
+
+sudo mysql -u root -p
+show databases;
+
+# Composer
+sudo apt-get install -y curl
+cd
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+sudo chmod +x /usr/local/bin/composer
+composer --version
+
+# Laravel
+sudo chown -R user.user /var/www/html
+cd /var/www/html
+composer create-project laravel/laravel laravelapp
+cd laravelapp
+php artisan
+
+# config apache/laravel
+sudo vim /etc/apache2/sites-available/laravel.conf
+-----
+<VirtualHost *:80>
+ServerName localhost
+ServerAdmin admin@example.com
+DocumentRoot /var/www/html/laravelapp/public
+<Directory /var/www/html/laravelapp>
+AllowOverride All
+</Directory>
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+-----
+sudo a2ensite laravel.conf
+sudo a2enmod rewrite
+cd /var/www/html/laravelapp
+chmod -R 775 storage bootstrap/cache
+chmod 777 -R storage bootstrap/cache
+sudo systemctl restart apache2
+
+# Node.js
+sudo apt-get update
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+source ~/.bashrc
+nvm list-remote
+nvm install v14.18.0
+nvm list
+node -v
+sudo apt-get install -y npm
+
+# Angular
+sudo npm install -g @angular/cli
+
+# VS code
+https://code.visualstudio.com/
+cd /home/user/Downloads
+sudo dpkg -i code_1.61.2-1634656828_amd64.deb
