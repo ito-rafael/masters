@@ -120,3 +120,6 @@ Semana 6:
 
 Videoaula 12 - Introdução ao Docker – Parte 1
 https://www.youtube.com/watch?v=UgIQz44LA70
+
+Videoaula 13 - Introdução ao Docker – Parte 2
+https://www.youtube.com/watch?v=s8xJ2MbPoqU
