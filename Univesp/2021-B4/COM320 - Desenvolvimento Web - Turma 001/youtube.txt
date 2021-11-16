@@ -123,3 +123,8 @@ https://www.youtube.com/watch?v=UgIQz44LA70
 
 Videoaula 13 - Introdução ao Docker – Parte 2
 https://www.youtube.com/watch?v=s8xJ2MbPoqU
+
+Videoaula 14 - Docker como plataforma de desenvolvimento web
+https://www.youtube.com/watch?v=i8CgtYzORgM
+
+==================================================
