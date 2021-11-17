@@ -1,0 +1,58 @@
+Guia Atividade Prática - Semana 6
+
+# docker installation
+ sudo apt-get update
+ sudo apt-get install -y ca-certificates curl gnupg lsb-release
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+ sudo apt-get update
+ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# container
+docker pull ubuntu
+docker run -it ubuntu
+apt-get update
+
+# DOCKERFILE
+-----
+
+-----
+
+docker commit -m "Laravel Crud - Version-1.0" -a "Rafael Ito" $(docker ps | grep ubuntu | awk '{print $1}') itorafael/com320-app-v1.0
+
+docker run --mount type=bind,source="/var/www/html/",target=/home/rafael -it itorafael/com320-app-v1.0
+
+# inside container
+cp -r /home/rafael/laravel-crud-app /var/www/html
+cd /var/www/html/laravel-crud-app
+composer update
+chmod -R 777 bootstrap/cache storage
+vim .env
+-----
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root
+DB_PASSWORD=User@2021)
+-----
+php artisan key:generate  
+php artisan cache:clear
+php artisan migrate:refresh
+
+docker commit -m "Laravel Crud - Version-2.0" -a "Rafael Ito" $(docker ps | grep com320-app-v1.0 | awk '{print $1}') itorafael/com320-app-v2.0
+
+docker run -it -p 8080:80 itorafael/com320-app-v2.0
+
+# inside container
+service apache2 start
+service mysql start
+
+# front-end (host)
+vim /var/www/html/angular-crud-app/src/environments/environment.ts
+-----
+url_api: 'http://localhost:8080/api/'
+-----
+
+# in web browser
+http://localhost:4200/
