@@ -139,4 +139,7 @@ Semana 7:
 Videoaula 15 - Implantação de Aplicações Web na Google Cloud 
 https://www.youtube.com/watch?v=HLM--6Y9nWY
 
+Videoaula 16 - Implantação de Aplicações Web na Azure 
+https://www.youtube.com/watch?v=_VXQXK5UrII
+
 
