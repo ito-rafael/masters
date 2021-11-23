@@ -132,3 +132,11 @@ https://www.youtube.com/watch?v=i8CgtYzORgM
 Orientação de Estudo - Atividades Práticas – Semana 6 (Windows & Linux)
 https://alunounivespbr.sharepoint.com/sites/MaquinaVirtual/Documentos%20Partilhados/Forms/AllItems.aspx?id=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320%2FSemana%206%20%2D%20%20Guias%20Praticos%20%2D%20Ambiente%20Windows%20%2D%20Desenvolvimento%20Web%20%2D%20COM320%2Epdf&parent=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320
 
+==================================================
+
+Semana 7:
+
+Videoaula 15 - Implantação de Aplicações Web na Google Cloud 
+https://www.youtube.com/watch?v=HLM--6Y9nWY
+
+
