@@ -152,6 +152,10 @@ COM310 - Videoaula 21:
 Infraestrutura para Sistemas de Software - Criação de Contas - Google Cloud e Microsoft Azure
 https://www.youtube.com/watch?v=hLHwlY9CZao&list=PL33eUDz7AwwzvhJ8ShEzF6jlErXEy8IKe&index=24
 
+COM310 - Videoaula 22:
+Infraestrutura para Sistemas de Software - Criação de Contas, Visão Geral do Console e Serviços
+https://www.youtube.com/watch?v=yPk0OqaaR1Q&list=PL33eUDz7AwwzvhJ8ShEzF6jlErXEy8IKe&index=23
+
 --------------------------------------------------
 
 Orientação de Estudo - Atividades Práticas – Semana 7 (Windows)
