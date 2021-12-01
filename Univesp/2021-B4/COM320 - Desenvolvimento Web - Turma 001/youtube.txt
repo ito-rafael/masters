@@ -148,6 +148,10 @@ COM310 - Videoaula 20:
 Infraestrutura para Sistemas de Software - Introdução – Google Cloud, Azure e AWS:
 https://www.youtube.com/watch?v=5FlAWC7cfYY&list=PL33eUDz7AwwzvhJ8ShEzF6jlErXEy8IKe&index=24
 
+COM310 - Videoaula 21:
+Infraestrutura para Sistemas de Software - Criação de Contas - Google Cloud e Microsoft Azure
+https://www.youtube.com/watch?v=hLHwlY9CZao&list=PL33eUDz7AwwzvhJ8ShEzF6jlErXEy8IKe&index=24
+
 --------------------------------------------------
 
 Orientação de Estudo - Atividades Práticas – Semana 7 (Windows)
