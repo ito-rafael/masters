@@ -144,6 +144,12 @@ https://www.youtube.com/watch?v=_VXQXK5UrII
 
 --------------------------------------------------
 
+COM310 - Videoaula 20:
+Infraestrutura para Sistemas de Software - Introdução – Google Cloud, Azure e AWS:
+https://www.youtube.com/watch?v=5FlAWC7cfYY&list=PL33eUDz7AwwzvhJ8ShEzF6jlErXEy8IKe&index=24
+
+--------------------------------------------------
+
 Orientação de Estudo - Atividades Práticas – Semana 7 (Windows)
 https://alunounivespbr.sharepoint.com/sites/MaquinaVirtual/Documentos%20Partilhados/Forms/AllItems.aspx?id=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320%2FSemana%207%20%2D%20%20Guias%20Praticos%20%2D%20Ambiente%20Windows%20%2D%20Desenvolvimento%20Web%20%2D%20COM320%2Epdf&parent=%2Fsites%2FMaquinaVirtual%2FDocumentos%20Partilhados%2FCOM320
 
