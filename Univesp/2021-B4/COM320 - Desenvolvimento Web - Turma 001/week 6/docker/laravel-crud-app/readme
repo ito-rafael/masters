@@ -1,0 +1,5 @@
+# info
+app running at port 8080
+
+# todo
+remove user and password of MySQL from Dockerfile
