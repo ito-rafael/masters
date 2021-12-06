@@ -1,0 +1,48 @@
+<h4>Cadastrar País</h4>
+<form action="" class="m-bottom">
+  <div>
+    <label for="nome">Nome <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="text" name="nome" [(ngModel)]="pais.nome">
+  </div>
+
+  <button *ngIf="!pais.id" type="submit" class="btn m-topo" (click)="salvar()">
+    Salvar
+  </button>
+
+  <button *ngIf="pais.id" type="submit" class="btn m-topo" (click)="atualizar()">
+    Salvar
+  </button>
+  <button *ngIf="pais.id" type="submit" class="btn m-topo" (click)="cancelar()">
+    Cancelar
+  </button>
+</form>
+
+<hr>
+
+<h4>Lista de Países</h4>
+<table class="table m-topo m-bottom">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="paises.length > 0">
+    <tr *ngFor="let pais of paises;">
+      <td>{{ pais.id }}</td>
+      <td>{{ pais.nome }}</td>
+      <td>
+        <button (click)="editar(pais)">Editar</button>
+        <button (click)="excluir(pais.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="paises.length == 0">
+    <tr>
+      <td class="text-center" colspan="3">
+        Nenhum resultado encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>

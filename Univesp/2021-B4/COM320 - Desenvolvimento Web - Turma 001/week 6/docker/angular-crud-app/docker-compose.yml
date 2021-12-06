@@ -1,0 +1,19 @@
+version: "3"
+services:
+  laravel:
+    image: itorafael/angular-crud-app
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    restart: on-failure
+    network_mode: "bridge"
+    ports: 
+      - "4200:4200"
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"

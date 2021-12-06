@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  background-color: cadetblue;
+  border: 1px solid #c9c9c9;
+  min-height: 20px;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.txt-vermelho {
+  color: red;
+}
+
+.m-lados {
+  margin: 0px 5px;
+}
+
+.m-topo {
+  margin-top: 20px;
+}
+
+.m-bottom {
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}

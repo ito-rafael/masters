@@ -1,0 +1,115 @@
+# parent image
+#FROM ubuntu:latest
+FROM node:lts-bullseye
+LABEL maintainer="ito.rafael@gmail.com"
+
+# update & install packages
+#RUN apt-get update && apt-get install -y tzdata nano net-tools systemctl curl
+RUN apt-get update
+RUN apt-get install -y curl systemctl tzdata
+
+# Apache
+RUN apt-get install -y apache2
+RUN systemctl start apache2
+
+# Angular CLI
+RUN npm install -g @angular/cli
+
+#=======================================
+# Angular
+#=======================================
+# create project
+WORKDIR /var/www/html
+RUN ng new angular-crud-app --routing=true --style=scss
+WORKDIR /var/www/html/angular-crud-app
+
+# delete content from file
+RUN echo "" > ./src/app/app.component.html
+
+# panel component & module
+RUN ng generate module components/painel
+RUN ng generate component components/painel
+# country component & module
+RUN ng generate module components/pais
+RUN ng generate component components/pais
+# university component & module
+RUN ng generate module components/universidades
+RUN ng generate component components/universidades
+
+COPY src/app/components/pais/pais-routing.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/pais/pais-routing.module.ts
+
+COPY src/app/components/universidades/universidades-routing.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/universidades/universidades-routing.module.ts
+
+COPY src/app/app-routing.module.ts \
+    /var/www/html/angular-crud-app/src/app/app-routing.module.ts
+
+COPY src/app/app.module.ts \
+    /var/www/html/angular-crud-app/src/app/app.module.ts
+
+# country service
+RUN ng generate service services/pais
+COPY src/app/services/pais.service.ts \
+    /var/www/html/angular-crud-app/src/app/services/pais.service.ts
+
+# env
+COPY src/environments/environment.ts \
+    /var/www/html/angular-crud-app/src/environments/environment.ts
+
+# university service
+RUN ng generate service services/universidades
+
+COPY src/app/services/universidade.service.ts \
+    /var/www/html/angular-crud-app/src/app/services/universidade.service.ts
+
+COPY src/app/components/painel/painel.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/painel/painel.module.ts
+
+COPY src/app/components/pais/pais.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/pais/pais.module.ts
+
+COPY src/app/components/universidades/universidades.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/universidades/universidades.module.ts
+
+COPY src/app/components/painel/painel.component.ts \
+    /var/www/html/angular-crud-app/src/app/components/painel/painel.component.ts
+
+COPY src/app/components/pais/pais.component.ts \
+    /var/www/html/angular-crud-app/src/app/components/pais/pais.component.ts
+
+COPY src/app/components/universidades/universidades.component.ts \
+    /var/www/html/angular-crud-app/src/app/components/universidades/universidades.component.ts
+
+COPY src/app/app.module.ts \
+    /var/www/html/angular-crud-app/src/app/app.module.ts
+
+COPY src/app/components/pais/pais.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/pais/pais.module.ts
+
+COPY src/app/components/universidades/universidades.module.ts \
+    /var/www/html/angular-crud-app/src/app/components/universidades/universidades.module.ts
+
+COPY src/styles.scss \
+    /var/www/html/angular-crud-app/src/styles.scss
+
+COPY src/app/components/painel/painel.component.html \
+    /var/www/html/angular-crud-app/src/app/components/painel/painel.component.html
+
+COPY src/app/components/painel/painel.component.scss \
+    /var/www/html/angular-crud-app/src/app/components/painel/painel.component.scss
+
+COPY src/app/components/pais/pais.component.html \
+    /var/www/html/angular-crud-app/src/app/components/pais/pais.component.html
+
+COPY src/app/components/universidades/universidades.component.html \
+    /var/www/html/angular-crud-app/src/app/components/universidades/universidades.component.html
+
+COPY src/app/app.component.html \
+    /var/www/html/angular-crud-app/src/app/app.component.html
+
+# expose port 4200/TCP (used to display front-end)
+RUN sed -e 's/ng serve/ng serve --host 0.0.0.0/' -i package.json
+EXPOSE 4200
+
+CMD npm start; tail -f /dev/null;

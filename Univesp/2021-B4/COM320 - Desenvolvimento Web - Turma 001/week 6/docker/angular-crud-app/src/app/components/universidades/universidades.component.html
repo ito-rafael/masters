@@ -1,0 +1,70 @@
+<h4>Cadastrar Universidade</h4>
+<form action="" class="m-bottom">
+  <div class="m-topo m-bottom">
+    <label for="nome">Nome <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="text" name="nome" [(ngModel)]="universidadeForm.nome">
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="dtFundacao">Data da Fundação <span class="txt-vermelho">*</span>:</label> <br>
+    <input type="date" name="dtFundacao" [(ngModel)]="universidadeForm.dt_fundacao">
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="pais">País <span class="txt-vermelho">*</span>:</label> <br>
+    <select name="pais" [(ngModel)]="universidadeForm.pais_id" [disabled]="universidadeForm.id">
+      <option value="">Selecione...</option>
+      <option *ngFor="let pais of paises" value="{{ pais.id }}">{{ pais.nome }}</option>
+    </select>
+  </div>
+
+  <div class="m-topo m-bottom">
+    <label for="descricao">Descrição <span class="txt-vermelho">*</span>:</label> <br>
+    <textarea name="descricao" cols="30" rows="10" [(ngModel)]="universidadeForm.descricao"></textarea>
+  </div>
+
+  <button *ngIf="!universidadeForm.id" type="submit" class="btn" (click)="criar()">
+    Salvar
+  </button>
+
+  <button *ngIf="universidadeForm.id" type="submit" class="btn" (click)="atualizar()">
+    Salvar
+  </button>
+  <button *ngIf="universidadeForm.id" type="submit" class="btn" (click)="cancelar()">
+    Cancelar
+  </button>
+</form>
+
+<hr>
+
+<h4>Lista de Universidades</h4>
+<table class="table m-topo  m-bottom">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Data Fundação</th>
+      <th>Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="universidades.length > 0">
+    <tr *ngFor="let universidade of universidades;">
+      <td>{{ universidade.id }}</td>
+      <td>{{ universidade.nome }}</td>
+      <td>{{ universidade.dt_fundacao }}</td>
+      <td>{{ universidade.descricao }}</td>
+      <td class="text-center">
+        <button (click)="editar(universidade)">Editar</button>
+        <button (click)="excluir(universidade.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="universidades.length == 0">
+    <tr>
+      <td class="text-center" colspan="5">
+        Nenhum resultado encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
