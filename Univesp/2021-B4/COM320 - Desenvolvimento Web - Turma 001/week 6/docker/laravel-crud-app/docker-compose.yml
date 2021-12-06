@@ -1,0 +1,22 @@
+version: "3"
+services:
+  laravel:
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    image: itorafael/laravel-crud-app:v1.1
+    #volumes:
+    #  - ./laravel-crud-app:/var/www/html/laravel-crud-app/
+    restart: on-failure
+    network_mode: "bridge"
+    #network_mode: "host"
+    ports: 
+      - "8080:80"
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "10m"
