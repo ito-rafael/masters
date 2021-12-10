@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-crud-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel-crud-app
+  template:
+    metadata:
+      labels:
+        app: laravel-crud-app
+    spec:
+      containers:
+        - name: laravel-crud-app
+          image: itorafael.azurecr.io/laravel-crud-app
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+
