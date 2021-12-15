@@ -1,0 +1,119 @@
+Week 7 - Deployment of Docker container in Azure
+
+#=======================================
+# ACR: Azure Container Registry
+#=======================================
+# create resource group
+az group create --name webapp-resource-group --location 'West Central US'
+
+# create container registry
+az acr create --resource-group webapp-resource-group --name itorafael --location 'West Central US' --sku Standard
+
+# login
+az login
+sudo az acr login --name itorafael
+
+# tagging & pushing docker image
+sudo docker tag itorafael/laravel-crud-app:v1.0 itorafael.azurecr.io/laravel-crud-app
+sudo docker push itorafael.azurecr.io/laravel-crud-app
+
+#=======================================
+# AKS: Azure Kubernetes Service
+#=======================================
+# create cluster
+az aks create --resource-group webapp-resource-group --name webapp-cluster --location 'West Central US' --node-vm-size 'Standard_B4ms' --node-count 1 
+
+# install kubectl
+sudo az aks install-cli
+# connect to the cluster
+az aks get-credentials --resource-group webapp-resource-group --name webapp-cluster
+kubectl get nodes
+
+# get the subscription ID (how via CLI?) and run the following command
+##########az account set --subscription 03b1563f-c516-4b66-91e1-adace6d851e1
+az aks update --name webapp-cluster --resource-group webapp-resource-group --attach-acr itorafael
+
+#=======================================
+# Workloads
+#=======================================
+# from a browser
+https://portal.azure.com/#home
+  --> Kubernetes services
+  --> webapp-cluster
+  --> Workloads
+  --> Add
+  --> Add with YAML
+-----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  replicas: 1
+  name: laravel-crud-app
+spec:
+  selector:
+    matchLabels:
+      app: laravel-crud-app
+  template:
+    metadata:
+      labels:
+        app: laravel-crud-app
+    spec:
+      containers:
+        - name: laravel-crud-app
+          image: itorafael.azurecr.io/laravel-crud-app
+          imagePullPolicy: Always
+          ports:
+-containerPort: 80
+-----
+
+#=======================================
+# Services and ingresses
+#=======================================
+# from a browser
+https://portal.azure.com/#home
+  --> Kubernetes services
+  --> webapp-cluster
+  --> Services and ingresses
+  --> Add
+  --> Add with YAML
+-----
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-laravel-webapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: laravel-crud-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+-----
+
+#=======================================
+# CLI-alternative
+#=======================================
+kubectl apply -f ./deployment.yaml -f ./service.yaml
+kubectl get service lb-laravel-webapp --watch
+
+
+#=======================================
+# Troubleshooting
+#=======================================
+# get External IP
+http://13.77.203.231:8080
+
+
+# debug
+kubectl exec --stdin --tty $(kubectl get pod | grep laravel-crud-app | awk '{print $1}') -- /bin/bash
+
+curl --request POST  http://localhost:80/api/paises --header 'Content-Type: application/json' --data '{"nome":"Brasil"}'
+curl --request GET http://localhost:80/api/paises/1
+kubectl edit service/lb-laravel-webapp
+kubectl edit deployment/laravel-crud-app
+
+# errors
+replicas under spec
+container port identation
+docker build .
