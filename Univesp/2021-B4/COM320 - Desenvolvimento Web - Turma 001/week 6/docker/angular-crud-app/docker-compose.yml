@@ -1,7 +1,7 @@
 version: "3"
 services:
   laravel:
-    image: itorafael/angular-crud-app
+    image: itorafael/angular-crud-app:v1.0
     #build:
     #  context: .
     #  dockerfile: Dockerfile
