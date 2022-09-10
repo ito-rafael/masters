@@ -26,7 +26,7 @@ vim /var/www/html/laravel-crud-app/database/migrations/*create_pais_table.php
         Schema::create('pais', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-	        $table->string('nome');
+            $table->string('nome');
         });
     }
 -----
@@ -51,10 +51,10 @@ class CreateUniversidadesTable extends Migration
     {
         Schema::create('universidades', function (Blueprint $table) {
             $table->id();
-	    $table->string('nome');
-	    $table->string('descricao', 600);
-	    $table->date('dt_fundacao');
-	    $table->foreignIdFor(Pais::class); // pais_id
+            $table->string('nome');
+            $table->string('descricao', 600);
+            $table->date('dt_fundacao');
+            $table->foreignIdFor(Pais::class); // pais_id
             $table->timestamps();
         });
     }
@@ -104,13 +104,13 @@ class Universidade extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome';
-        'descricao';
-        'dt_fundacao';
-	'pais_id';
+        'nome',
+        'descricao',
+        'dt_fundacao',
+        'pais_id',
     ];
 
-    protected $hidden = ['pais_id];
+    protected $hidden = ['pais_id'];
 }
 -----
 
@@ -138,8 +138,8 @@ class PaisController extends Controller
     public function index()
     {
         return response()->json(
-	    Pais::all()
-	);
+        Pais::all()
+    );
     }
 
     /**
@@ -161,17 +161,17 @@ class PaisController extends Controller
     public function store(Request $request)
     {
         $storeData = Validator::make($request->all(), [
-	    'nome' => 'required|max:255'
-	]);
+            'nome' => 'required|max:255'
+        ]);
 
-	if ($storeData->fails()) {
-	    return response()->json($storeData, 422);
-	}
+    if ($storeData->fails()) {
+        return response()->json($storeData, 422);
+    }
 
-	return response()->json(
-	    Pais::create($request->all()),
-	    201
-	);
+    return response()->json(
+        Pais::create($request->all()),
+        201
+    );
     }
 
     /**
@@ -183,8 +183,8 @@ class PaisController extends Controller
     public function show($id)
     {
         return response()->json(
-	    Pais::findOrFail($id)
-	);
+        Pais::findOrFail($id)
+    );
     }
 
     /**
@@ -208,17 +208,17 @@ class PaisController extends Controller
     public function update(Request $request, $id)
     {
         $updateData = Validator::make($request->all(), [
-	    'name' => 'required|max:255',
-	    'descricao' => 'required|max:255',
-	    'dt_fundacao' => 'required',
-	]);
+        'nome' => 'required|max:255'
+        ]);
 
-	if ($updateData->fails()) {
-	    return response()->json($updateData, 422);
-	}
+        if ($updateData->fails()) {
+            return response()->json($updateData, 422);
+        }
 
-	$universidade = Universidade::whereId($id)->update($request->all());
-	return response()->json($universidade);
+        $pais = Pais::whereId($id)->update([
+            'nome' => $request->input('nome')
+        ]);
+        return response()->json($pais);
     }
 
     /**
@@ -229,9 +229,9 @@ class PaisController extends Controller
      */
     public function destroy($id)
     {
-        $universidade = Universidade::findOrFail($id);
-	$universidade->delete();
-	return response()->json(null, 204);
+        $pais = Pais::findOrFail($id);
+        $pais->delete();
+        return response()->json(null, 204);
     }
 }
 -----
@@ -242,7 +242,9 @@ vim /var/www/html/laravel-crud-app/app/Http/Controllers/UniversidadeController.p
 
 namespace App\Http\Controllers;
 
+use App\Models\Universidade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class UniversidadeController extends Controller
 {
@@ -254,8 +256,8 @@ class UniversidadeController extends Controller
     public function index()
     {
         return response()->json(
-	    Universidade::all()
-	);
+        Universidade::all()
+    );
     }
 
     /**
@@ -277,20 +279,20 @@ class UniversidadeController extends Controller
     public function store(Request $request)
     {
         $storeData = Validator::make($request->all(), [
-	    'nome' => 'required|max:255',
-	    'descricao' => 'required|max:600',
-	    'dt_fundacao' => 'required',
-	    'pais_id' => 'required'
- 	]);
+        'nome' => 'required|max:255',
+        'descricao' => 'required|max:600',
+        'dt_fundacao' => 'required',
+        'pais_id' => 'required'
+     ]);
 
-	if ($storeData->fails()) {
-	    return response()->json($storeData, 422);
-	}
+    if ($storeData->fails()) {
+        return response()->json($storeData, 422);
+    }
 
-	return response()->json(
-	    Universidade::create($request->all()),
-	    201
-	);
+    return response()->json(
+        Universidade::create($request->all()),
+        201
+    );
     }
 
     /**
@@ -302,8 +304,8 @@ class UniversidadeController extends Controller
     public function show($id)
     {
         return response()->json(
-	    Universidade::findOrFail($id)
-	);
+        Universidade::findOrFail($id)
+    );
     }
 
     /**
@@ -327,18 +329,20 @@ class UniversidadeController extends Controller
     public function update(Request $request, $id)
     {
         $updateData = Validator::make($request->all(), [
-	    'nome' => 'required|max:255',
-	    'descricao' => 'required|max:600',
-	    'dt_fundacao' => 'required',
-	    'pais_id' => 'required'
- 	]);
+            'nome' => 'required|max:255',
+            'descricao' => 'required|max:600',
+            'dt_fundacao' => 'required'
+     ]);
 
-	if ($updateData->fails()) {
-	    return response()->json($updateData, 422);
-	}
-
-	$universidade::Universidade::whereId($id)->update($request->all()),
-	return response()->json($universidade);
+        if ($updateData->fails()) {
+            return response()->json($updateData->messages(), 422);
+        }
+        $universidade = Universidade::whereId($id)->update([
+            'nome' => $request->input('nome'),
+            'descricao' => $request->input('descricao'),
+            'dt_fundacao' => $request->input('dt_fundacao'),
+        ]);
+        return response()->json($universidade);
     }
 
     /**
@@ -349,9 +353,9 @@ class UniversidadeController extends Controller
      */
     public function destroy($id)
     {
-	$universidade = Universidade::findOrFail($id);
-	$universidade->delete();
-	return response()->json(null, 204);
+    $universidade = Universidade::findOrFail($id);
+    $universidade->delete();
+    return response()->json(null, 204);
     }
 }
 -----
@@ -380,17 +384,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/paises',      [PaisController::class, 'index']);
-Route::get('/paises/{id}', [PaisController::class, 'show']);
-Route::post('/paises',     [PaisController::class, 'store']);
-Route::put('/paises',      [PaisController::class, 'update']);
-Route::delete('/paises',   [PaisController::class, 'destroy']);
+Route::get('/paises',         [PaisController::class, 'index']);
+Route::get('/paises/{id}',    [PaisController::class, 'show']);
+Route::post('/paises',        [PaisController::class, 'store']);
+Route::put('/paises/{id}',    [PaisController::class, 'update']);
+Route::delete('/paises/{id}', [PaisController::class, 'destroy']);
 
-Route::get('/universidades',      [UniversidadeController::class, 'index']);
-Route::get('/universidades/{id}', [UniversidadeController::class, 'show']);
-Route::post('/universidades',     [UniversidadeController::class, 'store']);
-Route::put('/universidades',      [UniversidadeController::class, 'update']);
-Route::delete('/universidades',   [UniversidadeController::class, 'destroy']);
+Route::get('/universidades',         [UniversidadeController::class, 'index']);
+Route::get('/universidades/{id}',    [UniversidadeController::class, 'show']);
+Route::post('/universidades',        [UniversidadeController::class, 'store']);
+Route::put('/universidades/{id}',    [UniversidadeController::class, 'update']);
+Route::delete('/universidades/{id}', [UniversidadeController::class, 'destroy']);
 -----
 
 sudo vim /etc/apache2/sites-available/meus-projetos.conf
@@ -433,10 +437,26 @@ tar -xvzf linux64
 rm linux64
 /home/user/Downloads/Postman/Postman &
 # follow instructions in the PDF
+
+# Postman examples
 -----
 http://localhost/api/paises
-http://laravel-crud-app.test/api/paises
 {"nome":"México"}
+-----
+http://localhost/api/universidades
+{
+    "nome":"Univesp",
+    "descricao":"Universidade Virtual do Estado de São Paulo",
+    "dt_fundacao":"2012-06-20",
+    "pais_id":2
+}
+-----
+{
+    "nome":"Unicamp",
+    "descricao":"Universidade de Campinas",
+    "dt_fundacao":"1962-12-28",
+    "pais_id":2
+}
 
 
 # MySQL debugging
