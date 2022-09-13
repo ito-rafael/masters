@@ -2,22 +2,36 @@
 # author: Rafael Ito
 # version:
 #   - v0.1: first release
+#   - v0.2: changed parent image from jupyter-dev to ml-generic + install nbterm
 
-FROM itorafael/jupyter-dev:v0.1
-
-ARG GIT_USER="mit-han-lab"
-ARG GIT_REPO="once-for-all"
-ARG CONDA_ENV="ofa"
+#FROM itorafael/jupyter-dev:v0.1
+FROM itorafael/ml-generic:v0.1
 
 # update system
 USER root
 RUN apt update && apt upgrade -y
+RUN apt install -y git
+RUN apt install -y jupyter
 
 # clone repo
+WORKDIR /home/jovyan
+ARG GIT_USER="mit-han-lab"
+ARG GIT_REPO="once-for-all"
 RUN git clone "https://github.com/$GIT_USER/$GIT_REPO.git"
 
 # set environment
-WORKDIR /home/jovyan
 RUN pip install nvidia-ml-py3
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+
+# Jupyter on terminal
+RUN git clone https://github.com/davidbrochart/nbterm.git
+WORKDIR nbterm
+COPY nbterm/key_bindings.py nbterm/key_bindings.py
+RUN pip install ipykernel
+RUN pip install .
+
+WORKDIR /home/jovyan
+
+# prevent container from dying
+ENTRYPOINT ["tail", "-f", "/dev/null"]
