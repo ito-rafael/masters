@@ -1,0 +1,24 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[Cover e Thomas 2006]{Cover2006}
+\abntrefinfo{Cover e Thomas}{COVER; THOMAS}{2006}
+{COVER, T.~M.; THOMAS, J.~A. \emph{{Elements of Information Theory}}. 2. ed.
+  Hoboken, USA: Wiley-Interscience, 2006. v.~2nd.  (Wiley Series in
+  Telecommunications and Signal Processing, 3).}
+
+\bibitem[Feynman 1998]{Feynman1998}
+\abntrefinfo{Feynman}{FEYNMAN}{1998}
+{FEYNMAN, R.~P. \emph{{Feynman Lectures on Computation}}. Boston, USA:
+  Addison-Wesley Longman Publishing Co., Inc., 1998.}
+
+\bibitem[Haykin 2001]{Haykin2001}
+\abntrefinfo{Haykin}{HAYKIN}{2001}
+{HAYKIN, S. \emph{{Adaptive Filter Theory}}. 4. ed. [S.l.]: Prentice Hall,
+  2001.}
+
+\end{thebibliography}

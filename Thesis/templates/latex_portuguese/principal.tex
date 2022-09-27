@@ -1,0 +1,423 @@
+%% abtex2-modelo-trabalho-academico.tex, v-1.9.7 laurocesar
+%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro C\'{e}sar Araujo. Further information are available on
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\input{preambulo}
+\usepackage{lineno}
+\modulolinenumbers[5]
+
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% In\'{\i}cio do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espa\c{c}o extra obsoleto entre as frases.
+\frenchspacing
+
+
+% --- ELEMENTOS PR\'{E}-TEXTUAIS ---
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% --- Folha de rosto (o * indica que haver\'{a} a ficha bibliogr\'{a}fica)
+\imprimirfolhaderosto*
+% ---
+
+% --- Inserir a ficha bibliografica ---
+\begin{fichacatalografica}
+    \vspace*{\fill}
+    \begin{center}
+        \textsc{Inclua aqui o pdf com a ficha catalogr\'{a}fica fornecida pela BAE.}
+    \end{center}
+    \vspace*{\fill}
+    %\includepdf{fig_ficha_catalografica.pdf}
+\end{fichacatalografica}
+
+
+% --- Inserir folha de aprova\c{c}\~{a}o ---
+
+% Isto \'{e} um exemplo de Folha de aprova\c{c}\~{a}o, elemento obrigat\'{o}rio da NBR
+% 14724/2011 (se\c{c}\~{a}o 4.2.1.3). Voc\^{e} pode utilizar este modelo at\'{e} a aprova\c{c}\~{a}o
+% do trabalho. Ap\'{o}s isso, substitua todo o conte\'{u}do deste arquivo por uma
+% imagem da p\'{a}gina assinada pela banca com o comando abaixo:
+%
+% \begin{folhadeaprovacao}
+% \includepdf{folhadeaprovacao_final.pdf}
+% \end{folhadeaprovacao}
+%
+\begin{folhadeaprovacao}
+
+  \begin{center}
+    COMISS\~{A}O JULGADORA - TESE DE DOUTORADO
+    %\textsc{Inclua aqui a folha de assinaturas.}
+\end{center}
+\noindent
+\begin{minipage}{\textwidth}\SingleSpacing
+Candidato(a): Nome do Autor      RA: XXXXXX
+
+Data de defesa: XX de MES de 202X
+
+T\'{i}tulo da Tese: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+\vspace{2cm}
+
+Profa. Dra. Xxxxxxxxxx (Presidente)
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxxxx
+
+Profa. Dra xxxxxxxxxxxx
+
+\vspace{2cm}
+
+A Ata de Defesa, com as respectivas assinaturas dos membros da Comiss\~{a}o Julgadora, encontra-se no SIGA (Sistema de Fluxo de Disserta\c{c}\~{a}o/Tese) e na Secretaria de P\'{o}s-Gradua\c{c}\~{a}o da Faculdade de Engenharia El\'{e}trica e de Computa\c{c}\~{a}o.
+\end{minipage}
+
+\end{folhadeaprovacao}
+% ---
+
+% --- Dedicat\'{o}ria ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Dedico esta tese \`{a} todo mundo.} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+    Escreva seus agradecimentos.
+    Obs.: Ser\'{a} obrigat\'{o}rio caso o autor tenha recebido aux\'{\i}lio financeiro, parcial ou integral, de ag\^{e}ncia (s) de fomento. Neste caso, ele dever\'{a} atender \`{a} legisla\c{c}\~{a}o vigente espec\'{\i}fica de cada uma das Ag\^{e}ncias quanto \`{a} necessidade de se fazer refer\^{e}ncia ao apoio recebido e ao n\'{u}mero de processo. (OF PRPG 002/2019 – Orienta\c{c}\~{a}o sobre disserta\c{c}\~{o}es e teses).
+
+    -	Em caso de Bolsa CAPES, usar a seguinte express\~{a}o, como indicado na portaria 206 da CAPES:
+
+    O presente trabalho foi realizado com apoio da Coordena\c{c}\~{a}o de Aperfei\c{c}oamento de Pessoal de N\'{\i}vel Superior - Brasil (CAPES) - C\'{o}digo de Financiamento 001.
+
+    -	Em caso de bolsa CNPQ, usar a seguinte express\~{a}o de agradecimento:
+
+    O presente trabalho foi realizado com apoio do CNPq, Conselho Nacional de Desenvolvimento Cient\'{\i}fico  e Tecnol\'{o}gico – Brasil.
+
+    -	Em caso de bolsa FAPESP, fazer agradecimento contendo nome FAPESP, o n\'{u}mero do processo FAPESP a que se refere este Termo de Outorga, no modelo:
+
+    processo nº aaaa/nnnnn-d, Funda\c{c}\~{a}o de Amparo \`{a} Pesquisa do Estado de S\~{a}o Paulo (FAPESP).
+
+    Os artigos escritos em idioma estrangeiro dever\~{a}o indicar o apoio da FAPESP em ingl\^{e}s, conforme o seguinte modelo: grant \# aaaa/nnnnn-d, S\~{a}o Paulo Research Foundation (FAPESP).
+\end{agradecimentos}
+% ---
+
+% ---
+% Ep\'{\i}grafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{``Escreva aqui a sua ep\'{\i}grafe (Opcional)''\\
+		(Cita\c{c}\~{a}o)}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em portugu\^{e}s
+\setlength{\absparsep}{18pt} % ajusta o espa\c{c}amento dos par\'{a}grafos do resumo
+\begin{resumo}
+ Insira seu resumo. (Obrigat\'{o}rio, em portugu\^{e}s m\'{a}ximo de 500 palavras)
+
+	\lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent\textbf{Palavras-chaves}: palavra-chave 1; palavra-chave 2; palavra-chave 3.
+\end{resumo}
+
+% resumo em ingl\^{e}s
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   Same content of "Resumo".
+
+   \vspace{\onelineskip}
+
+   \noindent
+   \textbf{Keywords}: latex. abntex. text editoration.
+ \end{otherlanguage*}
+\end{resumo}
+
+%% resumo em franc\^{e}s
+%\begin{resumo}[R\'{e}sum\'{e}]
+% \begin{otherlanguage*}{french}
+%    Il s'agit d'un r\'{e}sum\'{e} en fran\c{c}ais.
+%
+%   \textbf{Mots-cl\'{e}s}: latex. abntex. publication de textes.
+% \end{otherlanguage*}
+%\end{resumo}
+%
+%% resumo em espanhol
+%\begin{resumo}[Resumen]
+% \begin{otherlanguage*}{spanish}
+%   Este es el resumen en espa\~{n}ol.
+%
+%   \textbf{Palabras clave}: latex. abntex. publicaci\'{o}n de textos.
+% \end{otherlanguage*}
+%\end{resumo}
+%% ---
+
+% ---
+% inserir lista de ilustra\c{c}\~{o}es
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de quadros
+% ---
+\pdfbookmark[0]{\listofquadrosname}{loq}
+\listofquadros*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+% --- inserir lista de Acronimos e Abrevia\c{c}\~{o}es ---
+\include{acronomos}
+\printglossary[type=\acronymtype,title={Lista de abreviaturas e siglas}]
+\cleardoublepage
+% ---
+
+% --- inserir lista de Acronimos e Abrevia\c{c}\~{o}es ---
+\include{simbolos}
+\printglossary[type=simbolos,title={Lista de símbolos}]
+\cleardoublepage
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdu\c{c}\~{a}o (exemplo de cap\'{\i}tulo sem numera\c{c}\~{a}o, mas presente no Sum\'{a}rio)
+% ----------------------------------------------------------
+\linenumbers
+\chapter{Introdu\c{c}\~{a}o}
+\label{cap:intro}
+
+\begin{itemize}
+    \item Verificar se a p\'{a}gina indicada no sum\'{a}rio corresponde \`{a} p\'{a}gina numerada
+    \item O n\'{u}mero indicado em cada p\'{a}gina deve ser o mesmo do n\'{u}mero da p\'{a}gina indicado no arquivo digital
+    \item A contagem de p\'{a}ginas come\c{c}a desde a primeira p\'{a}gina (capa), mas a numera\c{c}\~{a}o s\'{o} se torna vis\'{\i}vel AP\'{O}S o sum\'{a}rio.
+    \item O n\'{u}mero deve aparecer no canto superior direito e deve estar em algarismos ar\'{a}bicos
+    \item Ap\'{o}s o sum\'{a}rio TODAS as p\'{a}ginas devem ser numeradas
+\end{itemize}
+
+
+\textbf{\textcolor{red}{O corpo do trabalho \'{e} composto por t\'{o}picos b\'{a}sicos de estrutura de uma tese/disserta\c{c}\~{a}o segundo a norma ABNT, mas estes devem seguir as necessidades da \'{a}rea de conhecimento e do Orientador.).  OBS: Note que o n\'{u}mero de p\'{a}gina come\c{c}a a aparecer a partir daqui, da Introdu\c{c}\~{a}o, e deve ser cont\'{\i}nua at\'{e} a \'{u}ltima p\'{a}gina. Esclarecemos que o n\'{u}mero apresentado “14” \'{e} exemplificativo.   }}
+
+A introdu\c{c}\~{a}o geralmente contém:
+
+\begin{itemize}
+    \item Motiva\c{c}\~{a}o e uma breve revis\~{a}o sobre o tema do trabalho.
+    \item Objetivos do trabalho.
+    \item No caso do doutorado, descrever de forma sucinta as contribui\c{c}\~{o}es originais do trabalho.
+    \item Breve descri\c{c}\~{a}o da metodologia e dos cap\'{\i}tulos do trabalho.
+\end{itemize}
+
+Os capítulos a seguir apresentam uma sugestão de modelo de tese ou dissertação. Por exemplo, não é obrigatório haver um capítulo de resultados, podendo estes ser apresentados e discutidos ao longo do documento.
+
+%%%%%%%%% Dois parágrafos adicionados
+Este paragrafo ilustra o uso automático dos símbolos \gls{NN} e \gls{NFNF}, além das siglas \gls{NIST}, \gls{TWC}. Para adicionar símbolos, siga o modelo no arquivo de símbolos. No caso de siglas, siga o modelo no arquivo acronomos. Destamos que no primeiro uso da sigla \gls{TWD}, o próprio latex indica seu nome por extenso e nas demais apenas a sigla \gls{TWD}. Além disso, na página de siglas e símbolos, são apresentados os números das páginas nas quais ela aparece, caso essa opção seja configurada.
+
+Na ferramenta visual TeXstudio, após alterar os arquivo de acronomos e símbolos, compile o arquivo principal, selecione a opção \textbf{Ferramentas}/\textbf{Glossário} e depois compile o arquivo principal novamente. Este procedimento atualizará os respectivos arquivos. Caso tenha problemas de atualização das descrições de siglas/símbolos antigos, remova os arquivos principal.glsdefs, *.idx, *.ist, *log e refaça o procedimento indicado.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	 
+\nolinenumbers
+\part{Fundamentos (Opcional)}
+\linenumbers
+% ----------------------------------------------------------
+
+\resetlinenumber
+\include{cap1}
+
+\resetlinenumber
+\include{cap5}
+
+\resetlinenumber
+\include{resultados}
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espa\c{c}o de parte no Sum\'{a}rio
+% ----------------------------------------------------------
+\phantompart
+
+% ---
+% Conclus\~{a}o
+% ---
+\resetlinenumber
+\chapter{Conclus\~{a}o}
+% ---
+
+\lipsum[31-33]
+
+
+\nolinenumbers  %Não numerar referências
+
+
+% ----------------------------------------------------------
+% ELEMENTOS P\'{O}S-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Refer\^{e}ncias bibliogr\'{a}ficas
+% ----------------------------------------------------------
+\bibliography{tese}
+
+% ----------------------------------------------------------
+% Gloss\'{a}rio
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orienta\c{c}\~{o}es sobre o gloss\'{a}rio.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Ap\^{e}ndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os ap\^{e}ndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma p\'{a}gina indicando o in\'{\i}cio dos ap\^{e}ndices
+\partapendices
+
+% ----------------------------------------------------------
+\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+\lipsum[50]
+
+% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+\lipsum[55-57]
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma p\'{a}gina indicando o in\'{\i}cio dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem.}
+% ---
+\lipsum[30]
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+parturient montes nascetur ridiculus mus}
+% ---
+
+\lipsum[31]
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+% ---
+
+\lipsum[32]
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}
