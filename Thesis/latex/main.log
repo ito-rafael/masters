@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.21)  5 OCT 2022 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.21)  5 OCT 2022 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1382,17 +1382,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ] (./main.lot) [11
 
 ]
-\openout2 = `acronomos.aux'.
-
-
-(./acronomos.tex
 \@gls@deffile=\write8
 \openout8 = `main.glsdefs'.
 
-) (./main.acr) [12
-
-
-
+ (./main.acr)
+[12
 
 
 
@@ -1423,13 +1417,13 @@ Overfull \hbox (2.26993pt too wide) in paragraph at lines 42--42
 
 ] [20] [21]
 
-LaTeX Warning: Citation `Cover2006' on page 22 undefined on input line 368.
+LaTeX Warning: Citation `Cover2006' on page 22 undefined on input line 371.
 
 
-LaTeX Warning: Citation `Feynman1998' on page 22 undefined on input line 368.
+LaTeX Warning: Citation `Feynman1998' on page 22 undefined on input line 371.
 
 
-LaTeX Warning: Citation `Haykin2001' on page 22 undefined on input line 368.
+LaTeX Warning: Citation `Haykin2001' on page 22 undefined on input line 371.
 
 [22
 
@@ -1442,7 +1436,7 @@ Package epstopdf Info: Source file: <./figures/feec.eps>
 (epstopdf)                    size: 202830 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/feec-eps-convert
 ed-to.pdf ./figures/feec.eps>
-(epstopdf)             \includegraphics on input line 403.
+(epstopdf)             \includegraphics on input line 406.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1452,7 +1446,7 @@ DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./figures/feec-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/feec-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/feec-eps-converted-to.pdf  used on input lin
-e 403.
+e 406.
 (pdftex.def)             Requested size: 204.74861pt x 136.29112pt.
 Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    date: 2020-01-15 11:22:46
@@ -1462,7 +1456,7 @@ Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    size: 46707 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp2-eps-con
 verted-to.pdf ./figures/unicamp2.eps>
-(epstopdf)             \includegraphics on input line 407.
+(epstopdf)             \includegraphics on input line 410.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1472,15 +1466,15 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/unicamp2-eps-converted-to.pdf
 File: ./figures/unicamp2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp2-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp2-eps-converted-to.pdf  used on input
- line 407.
+ line 410.
 (pdftex.def)             Requested size: 136.30682pt x 90.73738pt.
 <./figures/unicamp4.png, id=227, 50.589pt x 57.5751pt>
 File: ./figures/unicamp4.png Graphic file (type png)
 <use ./figures/unicamp4.png>
-Package pdftex.def Info: ./figures/unicamp4.png  used on input line 410.
+Package pdftex.def Info: ./figures/unicamp4.png  used on input line 413.
 (pdftex.def)             Requested size: 50.58887pt x 57.57495pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--410
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
 [][]|\T1/lmr/m/n/10 (+20) Figura
  []
 
@@ -1492,7 +1486,7 @@ Package epstopdf Info: Source file: <./figures/unicamp1.eps>
 (epstopdf)                    size: 198257 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp1-eps-con
 verted-to.pdf ./figures/unicamp1.eps>
-(epstopdf)             \includegraphics on input line 417.
+(epstopdf)             \includegraphics on input line 420.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1502,7 +1496,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/unicamp1-eps-converted-to.pdf
 File: ./figures/unicamp1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp1-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp1-eps-converted-to.pdf  used on input
- line 417.
+ line 420.
 (pdftex.def)             Requested size: 181.99722pt x 120.8813pt.
 Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    date: 2020-01-15 11:22:46
@@ -1512,12 +1506,12 @@ Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    size: 46707 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp2-eps-con
 verted-to.pdf ./figures/unicamp2.eps>
-(epstopdf)             \includegraphics on input line 419.
+(epstopdf)             \includegraphics on input line 422.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figures/unicamp2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp2-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp2-eps-converted-to.pdf  used on input
- line 419.
+ line 422.
 (pdftex.def)             Requested size: 181.99722pt x 121.14934pt.
 Package epstopdf Info: Source file: <./figures/unicamp1.eps>
 (epstopdf)                    date: 2020-01-15 11:22:54
@@ -1527,12 +1521,12 @@ Package epstopdf Info: Source file: <./figures/unicamp1.eps>
 (epstopdf)                    size: 198257 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp1-eps-con
 verted-to.pdf ./figures/unicamp1.eps>
-(epstopdf)             \includegraphics on input line 428.
+(epstopdf)             \includegraphics on input line 431.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figures/unicamp1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp1-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp1-eps-converted-to.pdf  used on input
- line 428.
+ line 431.
 (pdftex.def)             Requested size: 184.27249pt x 122.39404pt.
 Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    date: 2020-01-15 11:22:46
@@ -1542,12 +1536,12 @@ Package epstopdf Info: Source file: <./figures/unicamp2.eps>
 (epstopdf)                    size: 46707 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp2-eps-con
 verted-to.pdf ./figures/unicamp2.eps>
-(epstopdf)             \includegraphics on input line 432.
+(epstopdf)             \includegraphics on input line 435.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figures/unicamp2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp2-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp2-eps-converted-to.pdf  used on input
- line 432.
+ line 435.
 (pdftex.def)             Requested size: 184.27249pt x 122.66544pt.
 Package epstopdf Info: Source file: <./figures/unicamp3.eps>
 (epstopdf)                    date: 2020-01-15 11:33:20
@@ -1557,7 +1551,7 @@ Package epstopdf Info: Source file: <./figures/unicamp3.eps>
 (epstopdf)                    size: 131268 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp3-eps-con
 verted-to.pdf ./figures/unicamp3.eps>
-(epstopdf)             \includegraphics on input line 437.
+(epstopdf)             \includegraphics on input line 440.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1567,7 +1561,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/unicamp3-eps-converted-to.pdf
 File: ./figures/unicamp3-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp3-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp3-eps-converted-to.pdf  used on input
- line 437.
+ line 440.
 (pdftex.def)             Requested size: 184.27249pt x 122.66544pt.
 Package epstopdf Info: Source file: <./figures/unicamp4.eps>
 (epstopdf)                    date: 2020-01-15 11:33:06
@@ -1577,7 +1571,7 @@ Package epstopdf Info: Source file: <./figures/unicamp4.eps>
 (epstopdf)                    size: 17772 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/unicamp4-eps-con
 verted-to.pdf ./figures/unicamp4.eps>
-(epstopdf)             \includegraphics on input line 441.
+(epstopdf)             \includegraphics on input line 444.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1587,20 +1581,20 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/unicamp4-eps-converted-to.pdf
 File: ./figures/unicamp4-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/unicamp4-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/unicamp4-eps-converted-to.pdf  used on input
- line 441.
+ line 444.
 (pdftex.def)             Requested size: 108.3046pt x 122.6582pt.
 [23] [24 <./figures/feec-eps-converted-to.pdf> <./figures/unicamp2-eps-converte
 d-to.pdf> <./figures/unicamp4.png> <./figures/unicamp1-eps-converted-to.pdf>]
 [25 <./figures/unicamp3-eps-converted-to.pdf> <./figures/unicamp4-eps-converted
 -to.pdf>]
 
-LaTeX Warning: Citation `Cover2006' on page 26 undefined on input line 500.
+LaTeX Warning: Citation `Cover2006' on page 26 undefined on input line 503.
 
 [26
 
 ]
 
-LaTeX Warning: Citation `Feynman1998' on page 27 undefined on input line 505.
+LaTeX Warning: Citation `Feynman1998' on page 27 undefined on input line 508.
 
 [27
 
@@ -1611,7 +1605,7 @@ No file main.bbl.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 557.
+(hyperref)                removing `\uppercase' on input line 560.
 
 [29
 
@@ -1623,7 +1617,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 585.
+(hyperref)                removing `\uppercase' on input line 588.
 
 [32
 
@@ -1651,16 +1645,19 @@ AED: lastpage setting LastPage
 \tf@toc=\write12
 \openout12 = `main.toc'.
 
- (./main.aux (./acronomos.aux))
+ (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 29474 strings out of 478238
- 512618 string characters out of 5850456
+ 29452 strings out of 478238
+ 511944 string characters out of 5850456
  1042910 words of memory out of 5000000
- 46899 multiletter control sequences out of 15000+600000
+ 46881 multiletter control sequences out of 15000+600000
  562332 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,12n,136p,1619b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
