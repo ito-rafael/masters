@@ -1,0 +1,135 @@
+%%
+%% Customiza\c{c}\~{o}es do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade Estadua de Campinas - Unicamp
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Daniel Guerreiro e Silva, Filipe Ieda Fazanaro e Marcos Covre,
+%% daniel.guerreiro@gmail.com
+%%
+%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A UNICAMP
+% ---
+
+%CUSTOMIZACAO DA NUMERACAO
+
+\renewcommand{\textual}{%
+\pagestyle{abntheadings}
+\aliaspagestyle{chapter}{abntchapfirst}
+\aliaspagestyle{part}{simple}
+}
+
+
+
+
+% CUSTOMIZACA DA CAPA
+\renewcommand{\imprimircapa}{
+\begin{capa}
+
+% Modelo 2
+%\begin{center}
+%\noindent \includegraphics[width=2cm]{unicamp.eps}
+%\end{center}
+%\begin{center}
+%\large\imprimirinstituicao
+%\end{center}
+
+\noindent
+\begin{minipage}{0.1\textwidth}
+	 \includegraphics[width=1.5cm]{eps/unicamp.eps}
+\end{minipage}
+\hspace*{\fill}
+\begin{minipage}{0.9\textwidth}
+	\centering
+	{\ABNTEXchapterfont\large\imprimirinstituicao}	
+\end{minipage}
+	
+
+\vspace*{3cm}
+
+\begin{center}
+{\ABNTEXchapterfont\large\imprimirautor}
+
+\vfill
+{\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}
+\vfill
+		
+\large\imprimirlocal
+
+\large\imprimirdata
+		
+\end{center}
+
+\vspace*{1cm}
+\end{capa}
+}
+
+%CUSTOMIZACAO DA FOLHA DE ROSTO
+%\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+
+\begin{center}
+{\ABNTEXchapterfont\large\imprimirautor}
+
+\vspace*{\fill}\vspace*{\fill}
+
+\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+\end{center}
+
+\vspace*{\fill}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.4\textwidth}
+  \begin{minipage}{.5\textwidth}
+  \SingleSpacing
+  \imprimirpreambulo
+  \end{minipage}%
+  \vspace*{\fill}
+}%
+
+\vspace*{1cm}
+
+\noindent
+{\imprimirorientadorRotulo~\imprimirorientador\par}
+\noindent
+\abntex@ifnotempty{\imprimircoorientador}{%
+  {\imprimircoorientadorRotulo~\imprimircoorientador}%
+}%
+
+\vspace*{1cm}
+
+\noindent
+\begin{minipage}{.4\textwidth}\SingleSpacing		
+Este trabalho corresponde \`{a} vers\~{a}o final da disserta\c{c}\~{a}o/tese defendida pelo	aluno \imprimirautor , e orientada pelo \imprimirorientador.
+\end{minipage}
+
+\vspace*{\fill}
+
+%{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+\begin{center}
+{\large\imprimirlocal}
+
+\par
+
+{\large\imprimirdata}
+\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A UNICAMP
+% ---
