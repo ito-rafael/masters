@@ -37,30 +37,30 @@
 #+LATEX_HEADER: \counterwithin{figure}{chapter}
 #+LATEX_HEADER: \counterwithin{table}{chapter}
 
-# Pacotes de cita\c{c}\~{o}es
+# Pacotes de citações
 #+LATEX_HEADER: \usepackage[brazilian,hyperpageref]{backref}
 #+LATEX_HEADER: \usepackage[alf]{abntex2cite}
 
-# --- Pacote de customiza\c{c}\~{a}o - Unicamp ---
+# --- Pacote de customização - Unicamp ---
 #+LATEX_HEADER: \usepackage{unicamp}
 
-# CONFIGURA\c{C}\~{O}ES DE PACOTES
+# CONFIGURAÇÕES DE PACOTES
 
-# Configura\c{c}\~{o}es do pacote backref
-# Usado sem a op\c{c}\~{a}o hyperpageref de backref
-#+LATEX_HEADER: \renewcommand{\backrefpagesname}{Citado na(s) p\'{a}gina(s):~}
-# Texto padr\~{a}o antes do n\'{u}mero das p\'{a}ginas
+# Configurações do pacote backref
+# Usado sem a opção hyperpageref de backref
+#+LATEX_HEADER: \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+# Texto padrão antes do número das páginas
 #+LATEX_HEADER: \renewcommand{\backref}{}
-# Define os textos da cita\c{c}\~{a}o
-# LATEX_HEADER: \renewcommand*{\backrefalt}[4]{\ifcase #1 % Nenhuma cita\c{c}\~{a}o no texto.% \or Citado na p\'{a}gina #2.% \else Citado #1 vezes nas p\'{a}ginas #2.% \fi}%
+# Define os textos da citação
+# LATEX_HEADER: \renewcommand*{\backrefalt}[4]{\ifcase #1 % Nenhuma citação no texto.% \or Citado na página #2.% \else Citado #1 vezes nas páginas #2.% \fi}%
 
 # alterando o aspecto da cor azul
 #+LATEX_HEADER: \definecolor{blue}{RGB}{41,5,195}
 
-# informa\c{c}\~{o}es do PDF
+# informações do PDF
 #+LATEX_HEADER: \makeatletter
 
-#+BIND: org-latex-hyperref-template "\\hypersetup{pdftitle={\\@title}, pdfauthor={\\@author}, pdfsubject={\\imprimirpreambulo}, pdfcreator={LaTeX with abnTeX2}, pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acad\\^{e}mico}, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=magenta, urlcolor=blue, bookmarksdepth=4"
+#+BIND: org-latex-hyperref-template "\\hypersetup{pdftitle={\\@title}, pdfauthor={\\@author}, pdfsubject={\\imprimirpreambulo}, pdfcreator={LaTeX with abnTeX2}, pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acad\êmico}, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=magenta, urlcolor=blue, bookmarksdepth=4"
 
 # \hypersetup{
 #     %pagebackref=true,
@@ -68,7 +68,7 @@
 #     pdfauthor={\@author},
 #     pdfsubject={\imprimirpreambulo},
 #     pdfcreator={LaTeX with abnTeX2},
-#     pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acad\^{e}mico},
+#     pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
 #     colorlinks=true,
 #     linkcolor=blue,
 #     citecolor=blue,
@@ -82,13 +82,13 @@
 #+LATEX_HEADER: \makeatother
 
 # ---
-# Posiciona figuras e tabelas no topo da p\'{a}gina quando adicionadas sozinhas
-# em um p\'{a}gina em branco. Ver https://github.com/abntex/abntex2/issues/170
+# Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+# em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
 #+LATEX_HEADER: \makeatletter
 #+LATEX_HEADER: \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 #+LATEX_HEADER: \makeatother
 
-# Possibilita cria\c{c}\~{a}o de Quadros e Lista de quadros.
+# Possibilita criação de Quadros e Lista de quadros.
 # Ver https://github.com/abntex/abntex2/issues/176
 #+LATEX_HEADER: \newcommand{\quadroname}{Quadro}
 #+LATEX_HEADER: \newcommand{\listofquadrosname}{Lista de quadros}
@@ -97,7 +97,7 @@
 #+LATEX_HEADER: \newlistof{listofquadros}{loq}{\listofquadrosname}
 #+LATEX_HEADER: \newlistentry{quadro}{loq}{0}
 
-# configura\c{c}\~{o}es para atender \`{a}s regras da ABNT
+# configurações para atender às regras da ABNT
 #+LATEX_HEADER: \setfloatadjustment{quadro}{\centering}
 #+LATEX_HEADER: \counterwithout{quadro}{chapter}
 #+LATEX_HEADER: \renewcommand{\cftquadroname}{\quadroname\space}
@@ -105,17 +105,17 @@
 
 #+LATEX_HEADER: \setfloatlocations{quadro}{hbtp}
 
-# Espa\c{c}amentos entre linhas e par\'{a}grafos
-# O tamanho do par\'{a}grafo \'{e} dado por:
+# Espaçamentos entre linhas e parágrafos
+# O tamanho do parágrafo é dado por:
 #+LATEX_HEADER: \setlength{\parindent}{2cm}
 
-# Controle do espa\c{c}amento entre um par\'{a}grafo e outro:
+# Controle do espaçamento entre um parágrafo e outro:
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # FIX ME
-# \setlength{\onelineskip}{0.2cm}  % tente tamb\'{e}m \onelineskip
+# \setlength{\onelineskip}{0.2cm}  % tente também \onelineskip
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# Informa\c{c}\~{o}es de dados para CAPA e FOLHA DE ROSTO
+# Informações de dados para CAPA e FOLHA DE ROSTO
 #+LATEX_HEADER: \titulo{Dissertation/Thesis Title}
 #+LATEX_HEADER: \autor{Author Name}
 #+LATEX_HEADER: \local{Campinas}
