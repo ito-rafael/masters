@@ -1,3 +1,5 @@
+\selectlanguage{english}
+
 
 \imprimircapa
 
@@ -82,29 +84,39 @@ A Ata de Defesa, com as respectivas assinaturas dos membros da Comissão Julgado
 \end{epigrafe}
 
 
-# resumo em português
-\setlength{\absparsep}{18pt}
-\begin{resumo}
- Insira seu resumo. (Obrigatório, em português máximo de 500 palavras)
+# resumo em inglês
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+
+    Same content of "Resumo".
 
     \lipsum[1]
 
     \vspace{\onelineskip}
 
-    \noindent\textbf{Palavras-chaves}: palavra-chave 1; palavra-chave 2; palavra-chave 3.
+    \noindent
+    \textbf{Keywords}:
+        latex.
+        abntex.
+        text editoration.
+\end{otherlanguage*}
 \end{resumo}
 
 
-# resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   Same content of "Resumo".
+# resumo em português
+\setlength{\absparsep}{18pt}
+\begin{resumo}[Resumo]
 
-   \vspace{\onelineskip}
+    Insira seu resumo. (Obrigatório, em português máximo de 500 palavras)
 
-   \noindent
-   \textbf{Keywords}: latex. abntex. text editoration.
- \end{otherlanguage*}
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent\textbf{Palavras-chaves}:
+        palavra-chave 1;
+        palavra-chave 2;
+        palavra-chave 3.
 \end{resumo}
 
 
