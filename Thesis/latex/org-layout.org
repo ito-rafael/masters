@@ -1,0 +1,164 @@
+
+\imprimircapa
+
+
+\imprimirfolhaderosto*
+
+
+\begin{fichacatalografica}
+    \vspace*{\fill}
+    \begin{center}
+        \textsc{Inclua aqui o pdf com a ficha catalogr\'{a}fica fornecida pela BAE.}
+    \end{center}
+    \vspace*{\fill}
+    %\includepdf{fig_ficha_catalografica.pdf}
+\end{fichacatalografica}
+
+
+\begin{folhadeaprovacao}
+  \begin{center}
+    COMISS\~{A}O JULGADORA - TESE DE DOUTORADO
+    %\textsc{Inclua aqui a folha de assinaturas.}
+\end{center}
+\noindent
+\begin{minipage}{\textwidth}\SingleSpacing
+Candidato(a): Nome do Autor      RA: XXXXXX
+Data de defesa: XX de MES de 202X
+Título da Tese: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+\vspace{2cm}
+
+Profa. Dra. Xxxxxxxxxx (Presidente)
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxxxx
+
+Profa. Dra xxxxxxxxxxxx
+
+\vspace{2cm}
+
+A Ata de Defesa, com as respectivas assinaturas dos membros da Comiss\~{a}o Julgadora, encontra-se no SIGA (Sistema de Fluxo de Disserta\c{c}\~{a}o/Tese) e na Secretaria de P\'{o}s-Gradua\c{c}\~{a}o da Faculdade de Engenharia El\'{e}trica e de Computa\c{c}\~{a}o.
+\end{minipage}
+
+\end{folhadeaprovacao}
+
+
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Dedico esta tese \`{a} todo mundo.} \vspace*{\fill}
+\end{dedicatoria}
+
+
+\begin{agradecimentos}
+    Escreva seus agradecimentos.
+    Obs.: Ser\'{a} obrigat\'{o}rio caso o autor tenha recebido aux\'{\i}lio financeiro, parcial ou integral, de ag\^{e}ncia (s) de fomento. Neste caso, ele dever\'{a} atender \`{a} legisla\c{c}\~{a}o vigente espec\'{\i}fica de cada uma das Ag\^{e}ncias quanto \`{a} necessidade de se fazer refer\^{e}ncia ao apoio recebido e ao n\'{u}mero de processo. (OF PRPG 002/2019 – Orienta\c{c}\~{a}o sobre disserta\c{c}\~{o}es e teses).
+
+    -	Em caso de Bolsa CAPES, usar a seguinte express\~{a}o, como indicado na portaria 206 da CAPES:
+
+    O presente trabalho foi realizado com apoio da Coordena\c{c}\~{a}o de Aperfei\c{c}oamento de Pessoal de N\'{\i}vel Superior - Brasil (CAPES) - C\'{o}digo de Financiamento 001.
+
+    -	Em caso de bolsa CNPQ, usar a seguinte express\~{a}o de agradecimento:
+
+    O presente trabalho foi realizado com apoio do CNPq, Conselho Nacional de Desenvolvimento Cient\'{\i}fico  e Tecnol\'{o}gico – Brasil.
+
+    -	Em caso de bolsa FAPESP, fazer agradecimento contendo nome FAPESP, o n\'{u}mero do processo FAPESP a que se refere este Termo de Outorga, no modelo:
+
+    processo nº aaaa/nnnnn-d, Funda\c{c}\~{a}o de Amparo \`{a} Pesquisa do Estado de S\~{a}o Paulo (FAPESP).
+
+    Os artigos escritos em idioma estrangeiro dever\~{a}o indicar o apoio da FAPESP em ingl\^{e}s, conforme o seguinte modelo: grant \# aaaa/nnnnn-d, S\~{a}o Paulo Research Foundation (FAPESP).
+\end{agradecimentos}
+
+
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+        \textit{``Escreva aqui a sua ep\'{\i}grafe (Opcional)''\\
+        (Cita\c{c}\~{a}o)}
+    \end{flushright}
+\end{epigrafe}
+
+
+# resumo em português
+\setlength{\absparsep}{18pt}
+\begin{resumo}
+ Insira seu resumo. (Obrigat\'{o}rio, em portugu\^{e}s m\'{a}ximo de 500 palavras)
+
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent\textbf{Palavras-chaves}: palavra-chave 1; palavra-chave 2; palavra-chave 3.
+\end{resumo}
+
+
+# resumo em inglês
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   Same content of "Resumo".
+
+   \vspace{\onelineskip}
+
+   \noindent
+   \textbf{Keywords}: latex. abntex. text editoration.
+ \end{otherlanguage*}
+\end{resumo}
+
+
+# inserir lista de ilustrações
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+
+#  inserir lista de quadros
+# \pdfbookmark[0]{\listofquadrosname}{loq}
+# \listofquadros*
+# \cleardoublepage
+
+
+# inserir lista de tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+
+# inserir lista de abreviaturas e siglas
+
+# inserir lista de Acronimos e Abreviações
+\newacronym{NIST}{NIST}{National Institute of Standards and Technology}
+\newacronym{TWC}{TWC}{Transformada Wavelet Contínua}
+\newacronym{TWD}{TWD}{Transformada Wavelet Discreta}
+\printglossary[type=\acronymtype,title={List of Abbreviations}]
+\cleardoublepage
+
+# inserir lista de Acronimos e Abreviações
+# \include{simbolos}
+
+# \newglossaryentry{NN}{
+#     name=$N$x$N$,
+#     type=simbolos,
+#     description={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels}
+# }
+#
+# \newglossaryentry{NFNF}{
+#     name=$N_{f}$x$N_{f}$,
+#     type=simbolos,
+#     description={Dimensão de um filtro de imagem na forma altura x largura (\textit{N\textsubscript{f}} x \textit{N\textsubscript{f}})}
+# }
+
+\printglossary[type=simbolos,title={List of Symbols}]
+\cleardoublepage
+
+
+# inserir o sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+
+# ELEMENTOS TEXTUAIS
+\textual
