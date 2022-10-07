@@ -1,0 +1,36 @@
+#+TITLE: Dissertation/Thesis Title
+#+AUTHOR: Author Name
+#+EMAIL: email@email.com
+#+DATE: Year
+#+OPTIONS: author:nil
+#+STARTUP: showeverything inlineimages latexpreview
+
+#+INCLUDE: preamble.org :only-contents t
+#+INCLUDE: layout.tex   :only-contents t
+
+# hide title from top of the first page
+#+LATEX_HEADER: \renewcommand\maketitle{}
+
+* Introduction
+
+\lipsum[1]
+
+* Related Work / Literature review
+
+\lipsum[2]
+
+* Method
+
+\lipsum[3]
+
+* Experiments
+
+\lipsum[4]
+
+* Results
+
+\lipsum[5]
+
+* Conclusion
+
+\lipsum[6]

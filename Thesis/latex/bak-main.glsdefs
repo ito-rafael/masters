@@ -82,3 +82,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{NN}%
+{%
+name={$N$x$N$},%
+sort={$N$x$N$},%
+type={simbolos},%
+first={$N$x$N$},%
+firstplural={$N$x$N$s},%
+text={$N$x$N$},%
+plural={$N$x$N$s},%
+description={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels},%
+descriptionplural={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NFNF}%
+{%
+name={$N_{f}$x$N_{f}$},%
+sort={$N_{f}$x$N_{f}$},%
+type={simbolos},%
+first={$N_{f}$x$N_{f}$},%
+firstplural={$N_{f}$x$N_{f}$s},%
+text={$N_{f}$x$N_{f}$},%
+plural={$N_{f}$x$N_{f}$s},%
+description={Dimensão de um filtro de imagem na forma altura x largura (\textit {N\textsubscript {f}} x \textit {N\textsubscript {f}})},%
+descriptionplural={Dimensão de um filtro de imagem na forma altura x largura (\textit {N\textsubscript {f}} x \textit {N\textsubscript {f}})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
