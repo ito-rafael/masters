@@ -5,6 +5,25 @@
 #+STARTUP: showeverything
 #+auto_tangle: t
 
+* Table of Contents :toc:
+- [[#title-page][Title page]]
+- [[#catalog-sheet][Catalog sheet]]
+- [[#approval-sheet][Approval sheet]]
+- [[#dedication][Dedication]]
+- [[#acknowledgements][Acknowledgements]]
+- [[#epigraph][Epigraph]]
+- [[#abstract][Abstract]]
+  - [[#english][English]]
+  - [[#portuguese][Portuguese]]
+- [[#lists-of][Lists of...]]
+  - [[#figures][Figures]]
+  - [[#frames][Frames]]
+  - [[#tables][Tables]]
+  - [[#abbreviations][Abbreviations]]
+  - [[#symbols][Symbols]]
+- [[#table-of-contents][Table of Contents]]
+- [[#textual-elements][Textual Elements]]
+
 * Title page
 #+BEGIN_SRC latex
 \selectlanguage{english}

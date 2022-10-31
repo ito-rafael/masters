@@ -11,11 +11,19 @@
 # hide title from top of the first page
 #+LATEX_HEADER: \renewcommand\maketitle{}
 
+* Table of Contents :toc:
+- [[#introduction][Introduction]]
+- [[#literature-review][Literature review]]
+- [[#method][Method]]
+- [[#experiments][Experiments]]
+- [[#results][Results]]
+- [[#conclusion][Conclusion]]
+
 * Introduction
 
 \lipsum[1]
 
-* Related Work / Literature review
+* Literature review
 
 \lipsum[2]
 
