@@ -1,0 +1,150 @@
+\ifglsentryexists{NIST}{}%
+{%
+\gls@defglossaryentry{NIST}%
+{%
+name={NIST},%
+sort={NIST},%
+type={acronym},%
+first={National Institute of Standards and Technology\glsspace (NIST)},%
+firstplural={National Institute of Standards and Technologys\glsspace (NISTs)},%
+text={NIST},%
+plural={NISTs},%
+description={National Institute of Standards and Technology},%
+descriptionplural={National Institute of Standards and Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={National Institute of Standards and Technology},%
+longplural={National Institute of Standards and Technologys},%
+short={NIST},%
+shortplural={NISTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TWC}{}%
+{%
+\gls@defglossaryentry{TWC}%
+{%
+name={TWC},%
+sort={TWC},%
+type={acronym},%
+first={Transformada Wavelet Cont\IeC {\'\i }nua\glsspace (TWC)},%
+firstplural={Transformada Wavelet Cont\IeC {\'\i }nuas\glsspace (TWCs)},%
+text={TWC},%
+plural={TWCs},%
+description={Transformada Wavelet Contínua},%
+descriptionplural={Transformada Wavelet Contínua\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transformada Wavelet Cont\IeC {\'\i }nua},%
+longplural={Transformada Wavelet Cont\IeC {\'\i }nuas},%
+short={TWC},%
+shortplural={TWCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TWD}{}%
+{%
+\gls@defglossaryentry{TWD}%
+{%
+name={TWD},%
+sort={TWD},%
+type={acronym},%
+first={Transformada Wavelet Discreta\glsspace (TWD)},%
+firstplural={Transformada Wavelet Discretas\glsspace (TWDs)},%
+text={TWD},%
+plural={TWDs},%
+description={Transformada Wavelet Discreta},%
+descriptionplural={Transformada Wavelet Discreta\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transformada Wavelet Discreta},%
+longplural={Transformada Wavelet Discretas},%
+short={TWD},%
+shortplural={TWDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NN}{}%
+{%
+\gls@defglossaryentry{NN}%
+{%
+name={$N$x$N$},%
+sort={$N$x$N$},%
+type={simbolos},%
+first={$N$x$N$},%
+firstplural={$N$x$N$s},%
+text={$N$x$N$},%
+plural={$N$x$N$s},%
+description={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels},%
+descriptionplural={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NFNF}{}%
+{%
+\gls@defglossaryentry{NFNF}%
+{%
+name={$N_{f}$x$N_{f}$},%
+sort={$N_{f}$x$N_{f}$},%
+type={simbolos},%
+first={$N_{f}$x$N_{f}$},%
+firstplural={$N_{f}$x$N_{f}$s},%
+text={$N_{f}$x$N_{f}$},%
+plural={$N_{f}$x$N_{f}$s},%
+description={Dimensão de um filtro de imagem na forma altura x largura (\textit {N\textsubscript {f}} x \textit {N\textsubscript {f}})},%
+descriptionplural={Dimensão de um filtro de imagem na forma altura x largura (\textit {N\textsubscript {f}} x \textit {N\textsubscript {f}})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

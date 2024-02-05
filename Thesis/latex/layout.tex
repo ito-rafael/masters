@@ -1,0 +1,148 @@
+\selectlanguage{english}
+\imprimircapa
+\imprimirfolhaderosto*
+
+\begin{fichacatalografica}
+    \vspace*{\fill}
+    \begin{center}
+        \textsc{Inclua aqui o pdf com a ficha catalográfica fornecida pela BAE.}
+    \end{center}
+    \vspace*{\fill}
+    %\includepdf{fig_ficha_catalografica.pdf}
+\end{fichacatalografica}
+
+\begin{folhadeaprovacao}
+  \begin{center}
+    COMISSÃO JULGADORA - TESE DE DOUTORADO
+    %\textsc{Inclua aqui a folha de assinaturas.}
+\end{center}
+\noindent
+\begin{minipage}{\textwidth}\SingleSpacing
+Candidato(a): Nome do Autor      RA: XXXXXX
+Data de defesa: XX de MES de 202X
+Título da Tese: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+\vspace{2cm}
+
+Profa. Dra. Xxxxxxxxxx (Presidente)
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxxxx
+
+Profa. Dra xxxxxxxxxxxx
+
+\vspace{2cm}
+
+A Ata de Defesa, com as respectivas assinaturas dos membros da Comissão Julgadora, encontra-se no SIGA (Sistema de Fluxo de Dissertação/Tese) e na Secretaria de Pós-Graduação da Faculdade de Engenharia Elétrica e de Computação.
+\end{minipage}
+
+\end{folhadeaprovacao}
+
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Dedico esta tese à todo mundo.} \vspace*{\fill}
+\end{dedicatoria}
+
+\begin{agradecimentos}
+    Escreva seus agradecimentos.
+    Obs.: Será obrigatório caso o autor tenha recebido auxílio financeiro, parcial ou integral, de agência (s) de fomento. Neste caso, ele deverá atender à legislação vigente específica de cada uma das Agências quanto à necessidade de se fazer referência ao apoio recebido e ao número de processo. (OF PRPG 002/2019 – Orientação sobre dissertações e teses).
+
+    -	Em caso de Bolsa CAPES, usar a seguinte expressão, como indicado na portaria 206 da CAPES:
+
+    O presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Código de Financiamento 001.
+
+    -	Em caso de bolsa CNPQ, usar a seguinte expressão de agradecimento:
+
+    O presente trabalho foi realizado com apoio do CNPq, Conselho Nacional de Desenvolvimento Científico  e Tecnológico – Brasil.
+
+    -	Em caso de bolsa FAPESP, fazer agradecimento contendo nome FAPESP, o número do processo FAPESP a que se refere este Termo de Outorga, no modelo:
+
+    processo nº aaaa/nnnnn-d, Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP).
+
+    Os artigos escritos em idioma estrangeiro deverão indicar o apoio da FAPESP em inglês, conforme o seguinte modelo: grant \# aaaa/nnnnn-d, São Paulo Research Foundation (FAPESP).
+\end{agradecimentos}
+
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+        \textit{``Escreva aqui a sua epígrafe (Opcional)''\\
+        (Citação)}
+    \end{flushright}
+\end{epigrafe}
+
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+
+    Same content of "Resumo".
+
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent
+    \textbf{Keywords}:
+        latex.
+        abntex.
+        text editoration.
+\end{otherlanguage*}
+\end{resumo}
+
+\setlength{\absparsep}{18pt}
+\begin{resumo}[Resumo]
+
+    Insira seu resumo. (Obrigatório, em português máximo de 500 palavras)
+
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent\textbf{Palavras-chaves}:
+        palavra-chave 1;
+        palavra-chave 2;
+        palavra-chave 3.
+\end{resumo}
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+%\pdfbookmark[0]{\listofquadrosname}{loq}
+%\listofquadros*
+%\cleardoublepage
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+\newacronym{NIST}{NIST}{National Institute of Standards and Technology}
+\newacronym{TWC}{TWC}{Transformada Wavelet Contínua}
+\newacronym{TWD}{TWD}{Transformada Wavelet Discreta}
+\printglossary[type=\acronymtype,title={List of Abbreviations}]
+\cleardoublepage
+
+%\include{simbolos}
+
+%\newglossaryentry{NN}{
+%    name=$N$x$N$,
+%    type=simbolos,
+%    description={Dimensão de uma imagem na forma altura x largura, composta por $N$ x $N$ pixels}
+%}
+%
+%\newglossaryentry{NFNF}{
+%    name=$N_{f}$x$N_{f}$,
+%    type=simbolos,
+%    description={Dimensão de um filtro de imagem na forma altura x largura (\textit{N\textsubscript{f}} x \textit{N\textsubscript{f}})}
+%}
+
+\printglossary[type=simbolos,title={List of Symbols}]
+\cleardoublepage
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+\textual

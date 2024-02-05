@@ -1,0 +1,140 @@
+\glsdefs@newdocentry{NIST}%
+{%
+name={NIST},%
+sort={NIST},%
+type={acronym},%
+first={National Institute of Standards and Technology\glsspace (NIST)},%
+firstplural={National Institute of Standards and Technology\acrpluralsuffix \glsspace (NIST\acrpluralsuffix )},%
+text={NIST},%
+plural={NIST\acrpluralsuffix },%
+description={National Institute of Standards and Technology},%
+descriptionplural={National Institute of Standards and Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={National Institute of Standards and Technology},%
+longplural={National Institute of Standards and Technologys},%
+short={NIST},%
+shortplural={NISTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{TWC}%
+{%
+name={TWC},%
+sort={TWC},%
+type={acronym},%
+first={Transformada Wavelet Contínua\glsspace (TWC)},%
+firstplural={Transformada Wavelet Contínua\acrpluralsuffix \glsspace (TWC\acrpluralsuffix )},%
+text={TWC},%
+plural={TWC\acrpluralsuffix },%
+description={Transformada Wavelet Contínua},%
+descriptionplural={Transformada Wavelet Contínua\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transformada Wavelet Contínua},%
+longplural={Transformada Wavelet Contínuas},%
+short={TWC},%
+shortplural={TWCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{TWD}%
+{%
+name={TWD},%
+sort={TWD},%
+type={acronym},%
+first={Transformada Wavelet Discreta\glsspace (TWD)},%
+firstplural={Transformada Wavelet Discreta\acrpluralsuffix \glsspace (TWD\acrpluralsuffix )},%
+text={TWD},%
+plural={TWD\acrpluralsuffix },%
+description={Transformada Wavelet Discreta},%
+descriptionplural={Transformada Wavelet Discreta\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transformada Wavelet Discreta},%
+longplural={Transformada Wavelet Discretas},%
+short={TWD},%
+shortplural={TWDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NN}%
+{%
+name={\PackageError {glossaries}{name key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry name}},%
+sort={\PackageError {glossaries}{name key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry name}},%
+type={acronym},%
+first={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NN'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}},%
+firstplural={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NN'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}s},%
+text={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NN'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}},%
+plural={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NN'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}s},%
+description={\PackageError {glossaries} {description key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry description}},%
+descriptionplural={\PackageError {glossaries} {description key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry description}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NFNF}%
+{%
+name={\PackageError {glossaries}{name key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry name}},%
+sort={\PackageError {glossaries}{name key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry name}},%
+type={acronym},%
+first={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NFNF'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}},%
+firstplural={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NFNF'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}s},%
+text={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NFNF'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}},%
+plural={\protect \GenericError  {(glossaries)                }{Package glossaries Error: name key required in \newglossaryentry for entry `NFNF'}{See the glossaries package documentation for explanation.}{You haven't specified the entry name}s},%
+description={\PackageError {glossaries} {description key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry description}},%
+descriptionplural={\PackageError {glossaries} {description key required in \string \newglossaryentry \space for entry `\@glo@label '}{You haven't specified the entry description}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

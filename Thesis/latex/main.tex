@@ -1,0 +1,268 @@
+% Created 2022-10-07 Fri 16:46
+% Intended LaTeX compiler: pdflatex
+\documentclass[12pt,oneside,a4paper,english]{abntex2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+%\usepackage{cmap}
+\usepackage{lastpage}
+\usepackage{epstopdf}
+\usepackage{lipsum}
+\usepackage{nomencl}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{pdfpages}
+\usepackage[font=footnotesize]{subfig}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{chngcntr}
+\let\printglossary\relax
+\let\theglossary\relax
+\let\endtheglossary\relax
+\usepackage[nonumberlist,acronym,nomain]{glossaries}
+\newglossary[tlg]{simbolos}{tld}{tdn}{Lista de símbolos}
+\makeglossaries
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+\usepackage{unicamp}
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\usepackage{hyperref}
+\makeatother
+\makeatletter
+\setlength{\@fptop}{5pt} % Set distance from top of page to first float
+\makeatother
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+\setfloatadjustment{quadro}{\centering}
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space}
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+\setfloatlocations{quadro}{hbtp}
+\setlength{\parindent}{2cm}
+\titulo{Dissertation/Thesis Title}
+\autor{Author Name}
+\local{Campinas}
+\data{Year}
+\orientador{Prof. Dr. Supervisor}
+\coorientador[Coorientador]{Prof. Dr. Co-supervisor}
+\instituicao{UNIVERSIDADE ESTADUAL DE CAMPINAS \par Faculdade de Engenharia Elétrica e de Computação}
+\tipotrabalho{Thesis (Doctorate)}
+\preambulo{Thesis presented to the School of Electrical and Computer Engineering of the University of Campinas in partial fulfillment of the requirements for the degree of Doctor in Electrical Engineering, in the area of Computer Engineering.}
+\makeindex
+\renewcommand\maketitle{}
+\date{Year}
+\title{Dissertation/Thesis Title}
+\hypersetup{
+ pdfauthor={Author Name},
+ pdftitle={Dissertation/Thesis Title},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\selectlanguage{english}
+\imprimircapa
+\imprimirfolhaderosto*
+
+\begin{fichacatalografica}
+    \vspace*{\fill}
+    \begin{center}
+        \textsc{Inclua aqui o pdf com a ficha catalográfica fornecida pela BAE.}
+    \end{center}
+    \vspace*{\fill}
+    %\includepdf{fig_ficha_catalografica.pdf}
+\end{fichacatalografica}
+
+\begin{folhadeaprovacao}
+  \begin{center}
+    COMISSÃO JULGADORA - TESE DE DOUTORADO
+    %\textsc{Inclua aqui a folha de assinaturas.}
+\end{center}
+\noindent
+\begin{minipage}{\textwidth}\SingleSpacing
+Candidato(a): Nome do Autor      RA: XXXXXX
+Data de defesa: XX de MES de 202X
+Título da Tese: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+\vspace{2cm}
+
+Profa. Dra. Xxxxxxxxxx (Presidente)
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxx
+
+Profa. Dra. xxxxxxxxx
+
+Profa. Dra xxxxxxxxxxxx
+
+\vspace{2cm}
+
+A Ata de Defesa, com as respectivas assinaturas dos membros da Comissão Julgadora, encontra-se no SIGA (Sistema de Fluxo de Dissertação/Tese) e na Secretaria de Pós-Graduação da Faculdade de Engenharia Elétrica e de Computação.
+\end{minipage}
+
+\end{folhadeaprovacao}
+
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Dedico esta tese à todo mundo.} \vspace*{\fill}
+\end{dedicatoria}
+
+\begin{agradecimentos}
+    Escreva seus agradecimentos.
+    Obs.: Será obrigatório caso o autor tenha recebido auxílio financeiro, parcial ou integral, de agência (s) de fomento. Neste caso, ele deverá atender à legislação vigente específica de cada uma das Agências quanto à necessidade de se fazer referência ao apoio recebido e ao número de processo. (OF PRPG 002/2019 – Orientação sobre dissertações e teses).
+
+    -	Em caso de Bolsa CAPES, usar a seguinte expressão, como indicado na portaria 206 da CAPES:
+
+    O presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Código de Financiamento 001.
+
+    -	Em caso de bolsa CNPQ, usar a seguinte expressão de agradecimento:
+
+    O presente trabalho foi realizado com apoio do CNPq, Conselho Nacional de Desenvolvimento Científico  e Tecnológico – Brasil.
+
+    -	Em caso de bolsa FAPESP, fazer agradecimento contendo nome FAPESP, o número do processo FAPESP a que se refere este Termo de Outorga, no modelo:
+
+    processo nº aaaa/nnnnn-d, Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP).
+
+    Os artigos escritos em idioma estrangeiro deverão indicar o apoio da FAPESP em inglês, conforme o seguinte modelo: grant \# aaaa/nnnnn-d, São Paulo Research Foundation (FAPESP).
+\end{agradecimentos}
+
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+        \textit{``Escreva aqui a sua epígrafe (Opcional)''\\
+        (Citação)}
+    \end{flushright}
+\end{epigrafe}
+
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+
+    Same content of "Resumo".
+
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent
+    \textbf{Keywords}:
+        latex.
+        abntex.
+        text editoration.
+\end{otherlanguage*}
+\end{resumo}
+
+\setlength{\absparsep}{18pt}
+\begin{resumo}[Resumo]
+
+    Insira seu resumo. (Obrigatório, em português máximo de 500 palavras)
+
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent\textbf{Palavras-chaves}:
+        palavra-chave 1;
+        palavra-chave 2;
+        palavra-chave 3.
+\end{resumo}
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+\%\pdfbookmark[0]{\listofquadrosname}{loq}
+\%\listofquadros*
+\%\cleardoublepage
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+\newacronym{NIST}{NIST}{National Institute of Standards and Technology}
+\newacronym{TWC}{TWC}{Transformada Wavelet Contínua}
+\newacronym{TWD}{TWD}{Transformada Wavelet Discreta}
+\printglossary[type=\acronymtype,title=\{List of Abbreviations\}]
+\cleardoublepage
+
+\%\include{simbolos}
+
+\%\newglossaryentry{NN}\{
+\%    name=\$N\$x\(N\),
+\%    type=simbolos,
+\%    description=\{Dimensão de uma imagem na forma altura x largura, composta por \(N\) x \(N\) pixels\}
+\%\}
+\%
+\%\newglossaryentry{NFNF}\{
+\%    name=\$N\textsubscript{f}\$x\(N_{f}\),
+\%    type=simbolos,
+\%    description=\{Dimensão de um filtro de imagem na forma altura x largura (\textit\{N\textsubscript{f}\} x \textit\{N\textsubscript{f}\})\}
+\%\}
+
+\printglossary[type=simbolos,title=\{List of Symbols\}]
+\cleardoublepage
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+\textual
+
+\section{Introduction}
+\label{sec:org1008afb}
+
+\lipsum[1]
+
+\section{Related Work / Literature review}
+\label{sec:org9284a62}
+
+\lipsum[2]
+
+\section{Method}
+\label{sec:orgd5b048e}
+
+\lipsum[3]
+
+\section{Experiments}
+\label{sec:org86b1e28}
+
+\lipsum[4]
+
+\section{Results}
+\label{sec:orgca70ec6}
+
+\lipsum[5]
+
+\section{Conclusion}
+\label{sec:org0457332}
+
+\lipsum[6]
+\end{document}

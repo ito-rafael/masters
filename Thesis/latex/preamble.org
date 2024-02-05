@@ -1,0 +1,136 @@
+#+OPTIONS: toc:nil
+#+LaTeX_CLASS: abntex2
+#+LaTeX_CLASS_OPTIONS: [12pt,oneside,a4paper,english]
+
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{indentfirst}
+#+LATEX_HEADER: \usepackage{color}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{microtype}
+#+LATEX_HEADER: %\usepackage{cmap}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{epstopdf}
+
+#+LATEX_HEADER: \usepackage{lipsum}
+#+LATEX_HEADER: \usepackage{nomencl}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{bbm}
+#+LATEX_HEADER: \usepackage{multirow}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{pdfpages}
+#+LATEX_HEADER: \usepackage[font=footnotesize]{subfig}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{pdflscape}
+#+LATEX_HEADER: \usepackage{chngcntr}
+
+#+LATEX_HEADER: \let\printglossary\relax
+#+LATEX_HEADER: \let\theglossary\relax
+#+LATEX_HEADER: \let\endtheglossary\relax
+
+#+LATEX_HEADER: \usepackage[nonumberlist,acronym,nomain]{glossaries}
+#+LATEX_HEADER: \newglossary[tlg]{simbolos}{tld}{tdn}{Lista de símbolos}
+#+LATEX_HEADER: \makeglossaries
+# Generate the glossary
+
+#+LATEX_HEADER: \counterwithin{figure}{chapter}
+#+LATEX_HEADER: \counterwithin{table}{chapter}
+
+# Pacotes de citações
+#+LATEX_HEADER: \usepackage[brazilian,hyperpageref]{backref}
+#+LATEX_HEADER: \usepackage[alf]{abntex2cite}
+
+# --- Pacote de customização - Unicamp ---
+#+LATEX_HEADER: \usepackage{unicamp}
+
+# CONFIGURAÇÕES DE PACOTES
+
+# Configurações do pacote backref
+# Usado sem a opção hyperpageref de backref
+#+LATEX_HEADER: \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+# Texto padrão antes do número das páginas
+#+LATEX_HEADER: \renewcommand{\backref}{}
+# Define os textos da citação
+# LATEX_HEADER: \renewcommand*{\backrefalt}[4]{\ifcase #1 % Nenhuma citação no texto.% \or Citado na página #2.% \else Citado #1 vezes nas páginas #2.% \fi}%
+
+# alterando o aspecto da cor azul
+#+LATEX_HEADER: \definecolor{blue}{RGB}{41,5,195}
+
+# informações do PDF
+#+LATEX_HEADER: \makeatletter
+
+#+BIND: org-latex-hyperref-template "\\hypersetup{pdftitle={\\@title}, pdfauthor={\\@author}, pdfsubject={\\imprimirpreambulo}, pdfcreator={LaTeX with abnTeX2}, pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acad\êmico}, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=magenta, urlcolor=blue, bookmarksdepth=4"
+
+# \hypersetup{
+#     %pagebackref=true,
+#     pdftitle={\@title},
+#     pdfauthor={\@author},
+#     pdfsubject={\imprimirpreambulo},
+#     pdfcreator={LaTeX with abnTeX2},
+#     pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+#     colorlinks=true,
+#     linkcolor=blue,
+#     citecolor=blue,
+#     filecolor=magenta,
+#     urlcolor=blue,
+#     bookmarksdepth=4
+# }
+
+#+LATEX_HEADER: \usepackage{hyperref}
+
+#+LATEX_HEADER: \makeatother
+
+# ---
+# Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+# em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \setlength{\@fptop}{5pt} % Set distance from top of page to first float
+#+LATEX_HEADER: \makeatother
+
+# Possibilita criação de Quadros e Lista de quadros.
+# Ver https://github.com/abntex/abntex2/issues/176
+#+LATEX_HEADER: \newcommand{\quadroname}{Quadro}
+#+LATEX_HEADER: \newcommand{\listofquadrosname}{Lista de quadros}
+
+#+LATEX_HEADER: \newfloat[chapter]{quadro}{loq}{\quadroname}
+#+LATEX_HEADER: \newlistof{listofquadros}{loq}{\listofquadrosname}
+#+LATEX_HEADER: \newlistentry{quadro}{loq}{0}
+
+# configurações para atender às regras da ABNT
+#+LATEX_HEADER: \setfloatadjustment{quadro}{\centering}
+#+LATEX_HEADER: \counterwithout{quadro}{chapter}
+#+LATEX_HEADER: \renewcommand{\cftquadroname}{\quadroname\space}
+#+LATEX_HEADER: \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+#+LATEX_HEADER: \setfloatlocations{quadro}{hbtp}
+
+# Espaçamentos entre linhas e parágrafos
+# O tamanho do parágrafo é dado por:
+#+LATEX_HEADER: \setlength{\parindent}{2cm}
+
+# Controle do espaçamento entre um parágrafo e outro:
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# FIX ME
+# \setlength{\onelineskip}{0.2cm}  % tente também \onelineskip
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Informações de dados para CAPA e FOLHA DE ROSTO
+#+LATEX_HEADER: \titulo{Dissertation/Thesis Title}
+#+LATEX_HEADER: \autor{Author Name}
+#+LATEX_HEADER: \local{Campinas}
+#+LATEX_HEADER: \data{Year}
+#+LATEX_HEADER: \orientador{Prof. Dr. Supervisor}
+#+LATEX_HEADER: \coorientador[Coorientador]{Prof. Dr. Co-supervisor}
+#+LATEX_HEADER: \instituicao{UNIVERSIDADE ESTADUAL DE CAMPINAS \par Faculdade de Engenharia Elétrica e de Computação}
+
+# MSc
+# \tipotrabalho{Dissertation (Masters)}
+# \preambulo{Dissertation presented to the School of Electrical and Computer Engineering of the University of Campinas in partial fulfillment of the requirements for the degree of Master in Electrical Engineering, in the area of Computer Engineering.}
+
+# PhD
+#+LATEX_HEADER: \tipotrabalho{Thesis (Doctorate)}
+#+LATEX_HEADER: \preambulo{Thesis presented to the School of Electrical and Computer Engineering of the University of Campinas in partial fulfillment of the requirements for the degree of Doctor in Electrical Engineering, in the area of Computer Engineering.}
+
+
+#+LATEX_HEADER: \makeindex
