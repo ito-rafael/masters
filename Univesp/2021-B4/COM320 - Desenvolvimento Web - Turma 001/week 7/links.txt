@@ -1,0 +1,51 @@
+
+==================================================
+Docker [inglês]
+==================================================
+
+Container x Máquinas Virtuais (VM):
+https://www.docker.com/resources/what-container
+
+Docker pós-instalação:
+https://docs.docker.com/engine/install/linux-postinstall/
+
+Referência Dockerfile:
+https://docs.docker.com/engine/reference/builder/
+
+Referência docker-compose:
+https://docs.docker.com/compose/compose-file/compose-file-v3/
+https://phoenixnap.com/kb/wp-content/uploads/2021/04/Docker-commands-cheat-sheet-by-PhoenixNAP-scaled.jpg
+https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf
+
+Volumes/mount no Docker:
+https://docs.docker.com/storage/
+
+Configurações de rede em containeres:
+https://docs.docker.com/network/
+
+Instalação docker-compose:
+https://docs.docker.com/compose/install/
+
+Docker Hub:
+https://hub.docker.com/
+
+--------------------------------------------------
+
+Meu Dockerfile:
+
+
+Meu docker-compose.yml:
+
+
+==================================================
+
+Lista de portas TCP/UDP
+https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+
+Top repositórios GitHub:
+https://gitstar-ranking.com/
+
+==================================================
+
+Azure CLI:
+https://docs.microsoft.com/en-us/cli/azure/
