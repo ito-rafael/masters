@@ -25,13 +25,6 @@ RUN pip install nvidia-ml-py3
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-# Jupyter on terminal
-RUN git clone https://github.com/davidbrochart/nbterm.git
-WORKDIR nbterm
-COPY nbterm/key_bindings.py nbterm/key_bindings.py
-RUN pip install ipykernel
-RUN pip install .
-
 WORKDIR /home/jovyan
 
 # prevent container from dying
