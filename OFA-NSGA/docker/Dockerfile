@@ -3,6 +3,7 @@
 # version:
 #   - v0.1: first release
 #   - v0.2: changed parent image from jupyter-dev to ml-generic + install nbterm
+#   - v0.3: replace mit-han-lab/once-for-all with ito-rafael/once-for-all-2
 
 #FROM itorafael/jupyter-dev:v0.1
 FROM itorafael/ml-generic:v0.1
@@ -15,8 +16,8 @@ RUN apt install -y jupyter
 
 # clone repo
 WORKDIR /home/jovyan
-ARG GIT_USER="mit-han-lab"
-ARG GIT_REPO="once-for-all"
+ARG GIT_USER="ito-rafael"
+ARG GIT_REPO="once-for-all-2"
 RUN git clone "https://github.com/$GIT_USER/$GIT_REPO.git"
 
 # set environment
