@@ -26,6 +26,12 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 WORKDIR /home/jovyan
+# install JupyterLab Code Formatter
+#  - Python: black+isort
+RUN pip install \
+    jupyterlab-code-formatter \
+    black \
+    isort
 
 # prevent container from dying
 ENTRYPOINT ["tail", "-f", "/dev/null"]
