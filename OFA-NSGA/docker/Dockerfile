@@ -4,9 +4,10 @@
 #   - v0.1: first release
 #   - v0.2: changed parent image from jupyter-dev to ml-generic + install nbterm
 #   - v0.3: replace mit-han-lab/once-for-all with ito-rafael/once-for-all-2
+#   - v0.4: change parent image from ml-generic to jupyter-dev
 
-#FROM itorafael/jupyter-dev:v0.1
-FROM itorafael/ml-generic:v0.1
+FROM itorafael/jupyter-dev:v0.4
+#FROM itorafael/ml-generic:v0.1
 
 # update system
 USER root
@@ -25,7 +26,6 @@ RUN pip install nvidia-ml-py3
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-WORKDIR /home/jovyan
 # install JupyterLab Code Formatter
 #  - Python: black+isort
 RUN pip install \
@@ -34,4 +34,4 @@ RUN pip install \
     isort
 
 # prevent container from dying
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
